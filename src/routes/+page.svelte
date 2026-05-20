@@ -60,7 +60,7 @@
   </div>
   <div class="wrap nav-inner">
     <a class="brand" href="/" aria-label="TrIADS Lab home">
-      <img class="brand-logo" src="/triads-lab-logo.png" alt="TrIADS Lab, Pitt DBMI" />
+      <img class="brand-logo" src="/triads-lab-logo-transparent.png" alt="TrIADS Lab, Pitt DBMI" />
     </a>
     <nav aria-label="Primary navigation">
       <a href="#research">Research</a>
@@ -77,7 +77,7 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">Pitt DBMI Research Lab</p>
+        <p class="eyebrow">Design exploration 02 / Transparent logo</p>
         <h1 id="hero-title">Medication safety through clinical evidence, knowledge bases, and responsible AI.</h1>
         <p class="hero-copy">The TrIADS Lab develops informatics methods for safer medication therapy, with emphasis on older adults, clinical decision support, pharmacovigilance, and natural product-drug interaction evidence.</p>
         <div class="actions">
@@ -219,32 +219,32 @@
   .wrap { width: min(var(--max-width), calc(100% - 40px)); margin: 0 auto; }
   .skip { position: absolute; left: -999px; top: 12px; z-index: 50; background: var(--pitt-gold); color: var(--pitt-dark-grey); padding: 10px 14px; }
   .skip:focus { left: 12px; }
-  header { position: sticky; top: 0; z-index: 20; background: var(--pitt-white); border-bottom: 1px solid var(--border); }
-  .topbar { background: var(--pitt-blue); color: var(--pitt-white); font-size: 0.875rem; }
+  header { position: sticky; top: 0; z-index: 20; background: var(--pitt-blue); border-bottom: 4px solid var(--pitt-gold); }
+  .topbar { background: #0b285a; color: var(--pitt-white); font-size: 0.875rem; }
   .topbar-inner, .nav-inner, .contact-inner, .footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
   .topbar-inner { min-height: 34px; }
   .topbar a, footer a, .panel-blue a { color: var(--pitt-gold); font-weight: 800; }
   .nav-inner { min-height: 76px; }
-  .brand { display: flex; gap: 14px; align-items: center; color: var(--ink); min-width: 280px; }
+  .brand { display: flex; gap: 14px; align-items: center; color: var(--pitt-white); min-width: 280px; }
   .brand:hover { text-decoration: none; }
-  .brand-logo { display: block; width: clamp(210px, 30vw, 360px); height: auto; border-radius: 6px; }
+  .brand-logo { display: block; width: clamp(210px, 30vw, 360px); height: auto; }
   nav { display: flex; justify-content: flex-end; gap: 4px; flex-wrap: wrap; }
-  nav a { min-height: 44px; padding: 11px 12px; border-radius: 6px; color: var(--ink); font-weight: 800; }
-  nav a:hover { background: #eef3ff; color: var(--pitt-blue); text-decoration: none; }
-  .hero { color: var(--pitt-white); background: linear-gradient(90deg, rgb(0 53 148 / 96%), rgb(0 53 148 / 82%)), var(--pitt-blue); }
+  nav a { min-height: 44px; padding: 11px 12px; border-radius: 6px; color: var(--pitt-white); font-weight: 800; }
+  nav a:hover { background: rgb(255 255 255 / 12%); color: var(--pitt-gold); text-decoration: none; }
+  .hero { color: var(--ink); background: linear-gradient(180deg, #ffffff 0%, #f5f7fb 100%); }
   .hero-grid { display: grid; min-height: 560px; grid-template-columns: minmax(0, 1.02fr) minmax(340px, 0.98fr); gap: 44px; align-items: center; padding: 64px 0 52px; }
   .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0; color: var(--pitt-gold); font-size: 0.9rem; font-weight: 900; text-transform: uppercase; }
   .eyebrow::before { content: ''; width: 34px; height: 3px; background: var(--pitt-gold); }
   h1, h2, h3, p { margin-top: 0; }
   h1 { max-width: 860px; margin: 16px 0 18px; font-size: clamp(2.25rem, 5vw, 3.7rem); line-height: 1.02; }
   h2 { font-size: clamp(1.8rem, 3vw, 2.35rem); line-height: 1.15; }
-  .hero-copy { max-width: 720px; color: #f4f7ff; font-size: 1.2rem; }
+  .hero-copy { max-width: 720px; color: var(--muted); font-size: 1.2rem; }
   .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
   .button { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; padding: 12px 17px; border: 1px solid transparent; border-radius: 7px; font-weight: 900; }
   .button.primary { background: var(--pitt-gold); color: var(--pitt-dark-grey); }
-  .button.secondary { border-color: rgb(255 255 255 / 65%); color: var(--pitt-white); }
+  .button.secondary { border-color: var(--pitt-blue); color: var(--pitt-blue); background: var(--pitt-white); }
   .button:hover { text-decoration: none; }
-  .hero-visual { position: relative; min-height: 420px; overflow: hidden; border: 1px solid rgb(255 255 255 / 28%); border-radius: var(--radius); background: rgb(255 255 255 / 8%); }
+  .hero-visual { position: relative; min-height: 420px; overflow: hidden; border: 1px solid #c8d5ea; border-radius: var(--radius); background: #eef3ff; }
   .node { position: absolute; display: grid; width: 132px; min-height: 72px; align-content: center; padding: 12px; border-radius: var(--radius); background: var(--pitt-white); box-shadow: var(--shadow); color: var(--ink); font-size: 0.86rem; font-weight: 800; }
   .node small { display: block; margin-top: 4px; color: var(--muted); font-weight: 700; }
   .node.gold { border-top: 5px solid var(--pitt-gold); }
