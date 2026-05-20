@@ -1,0 +1,10 @@
+node_modules/
+build/
+.svelte-kit/
+boyce_lab_website/
+.vscode/
+.DS_Store
+*.log
+.env
+*.local
+*.zip

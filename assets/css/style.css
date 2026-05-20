@@ -1,0 +1,16 @@
+:root{
+  --bg:#f7f9fb;
+  --text:#0b2545;
+  --accent:#0a84ff;
+}
+body{font-family:Inter,system-ui,Segoe UI,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);margin:0;padding:1rem}
+header{background:white;border-radius:8px;padding:1rem;margin-bottom:1rem}
+h1{margin:0}
+main{max-width:900px}
+footer{margin-top:2rem;font-size:0.9rem;color:#666}
+
+/* Global layout styles moved from +layout.svelte */
+:root{--bg:#f7f9fb}
+body{background:var(--bg);color:var(--text);margin:0}
+:root{}
+main{max-width:900px;margin:0 auto;padding:1rem}

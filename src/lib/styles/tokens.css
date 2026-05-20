@@ -1,0 +1,17 @@
+﻿:root {
+  --pitt-blue: #003594;
+  --pitt-gold: #ffb81c;
+  --pitt-white: #ffffff;
+  --pitt-grey: #e8e9ee;
+  --pitt-dark-grey: #2b2b2b;
+  --link-blue: #3366ff;
+  --ink: #18202f;
+  --muted: #5d6676;
+  --surface: #f7f8fb;
+  --border: #d8dde8;
+  --success: #287d3c;
+  --max-width: 1180px;
+  --radius: 8px;
+  --shadow: 0 18px 42px rgb(0 0 0 / 18%);
+  font-family: Arial, Helvetica, sans-serif;
+}

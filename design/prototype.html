@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrIADS Lab Website Mockup</title>
+  <style>
+    :root {
+      --pitt-blue: #003594;
+      --pitt-gold: #FFB81C;
+      --pitt-white: #FFFFFF;
+      --pitt-grey: #E8E9EE;
+      --pitt-dark-grey: #2B2B2B;
+      --link-blue: #3366FF;
+      --ink: #18202F;
+      --muted: #5D6676;
+      --surface: #F7F8FB;
+      --border: #D8DDE8;
+      --green: #287D3C;
+      --max: 1180px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--pitt-white);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--link-blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .skip {
+      position: absolute;
+      left: -999px;
+      top: 12px;
+      background: var(--pitt-gold);
+      color: var(--pitt-dark-grey);
+      padding: 10px 14px;
+      z-index: 50;
+    }
+
+    .skip:focus {
+      left: 12px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: var(--pitt-white);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .topbar {
+      background: var(--pitt-blue);
+      color: var(--pitt-white);
+      font-size: 0.875rem;
+    }
+
+    .topbar-inner,
+    .nav-inner,
+    .section-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar-inner {
+      min-height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .topbar a {
+      color: var(--pitt-gold);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--ink);
+      min-width: 280px;
+    }
+
+    .mark {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--pitt-blue);
+      border-radius: 8px;
+      color: var(--pitt-blue);
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 1.125rem;
+      line-height: 1.15;
+    }
+
+    .brand span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.2;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      color: var(--ink);
+      min-height: 44px;
+      padding: 11px 12px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    nav a.active,
+    nav a:hover {
+      background: #EEF3FF;
+      color: var(--pitt-blue);
+      text-decoration: none;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(0, 53, 148, 0.96), rgba(0, 53, 148, 0.82)),
+        var(--pitt-blue);
+      color: var(--pitt-white);
+    }
+
+    .hero .section-inner {
+      min-height: 560px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(340px, 0.98fr);
+      gap: 44px;
+      align-items: center;
+      padding: 64px 0 52px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--pitt-gold);
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 3px;
+      background: var(--pitt-gold);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.25rem, 5vw, 3.7rem);
+      line-height: 1.02;
+      margin: 16px 0 18px;
+      max-width: 860px;
+    }
+
+    .hero-copy {
+      font-size: 1.2rem;
+      max-width: 720px;
+      color: #F4F7FF;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 17px;
+      border-radius: 7px;
+      border: 1px solid transparent;
+      font-weight: 800;
+    }
+
+    .button.primary {
+      background: var(--pitt-gold);
+      color: var(--pitt-dark-grey);
+    }
+
+    .button.secondary {
+      border-color: rgba(255, 255, 255, 0.65);
+      color: var(--pitt-white);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 420px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .node {
+      position: absolute;
+      width: 132px;
+      min-height: 72px;
+      padding: 12px;
+      border-radius: 8px;
+      background: var(--pitt-white);
+      color: var(--ink);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+      font-size: 0.86rem;
+      font-weight: 700;
+      display: grid;
+      align-content: center;
+    }
+
+    .node small {
+      color: var(--muted);
+      display: block;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .node.gold {
+      border-top: 5px solid var(--pitt-gold);
+    }
+
+    .node.blue {
+      border-top: 5px solid var(--link-blue);
+    }
+
+    .node.green {
+      border-top: 5px solid var(--green);
+    }
+
+    .n1 { left: 8%; top: 10%; }
+    .n2 { right: 8%; top: 18%; }
+    .n3 { left: 31%; top: 43%; width: 160px; }
+    .n4 { left: 8%; bottom: 10%; }
+    .n5 { right: 8%; bottom: 10%; }
+
+    .line {
+      position: absolute;
+      height: 2px;
+      background: rgba(255, 184, 28, 0.78);
+      transform-origin: left center;
+    }
+
+    .l1 { width: 190px; left: 27%; top: 25%; transform: rotate(16deg); }
+    .l2 { width: 164px; left: 54%; top: 35%; transform: rotate(132deg); }
+    .l3 { width: 180px; left: 24%; top: 68%; transform: rotate(-24deg); }
+    .l4 { width: 184px; right: 20%; top: 68%; transform: rotate(24deg); }
+
+    .band {
+      padding: 64px 0;
+    }
+
+    .band.grey {
+      background: var(--surface);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 26px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 3vw, 2.35rem);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 690px;
+      margin-bottom: 0;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--pitt-white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px;
+    }
+
+    .card.featured {
+      border-top: 5px solid var(--pitt-gold);
+    }
+
+    .card h3 {
+      font-size: 1.18rem;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      border-radius: 999px;
+      background: #EEF3FF;
+      color: var(--pitt-blue);
+      padding: 5px 9px;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .panel-blue {
+      background: var(--pitt-blue);
+      color: var(--pitt-white);
+      border-radius: 8px;
+      padding: 28px;
+    }
+
+    .panel-blue h2,
+    .panel-blue p {
+      color: var(--pitt-white);
+    }
+
+    .panel-blue a {
+      color: var(--pitt-gold);
+      font-weight: 800;
+    }
+
+    .pipeline {
+      display: grid;
+      gap: 12px;
+    }
+
+    .pipe-step {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--pitt-white);
+    }
+
+    .num {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--pitt-gold);
+      color: var(--pitt-dark-grey);
+      font-weight: 900;
+    }
+
+    .pipe-step h3 {
+      margin-bottom: 4px;
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .pub {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--pitt-white);
+    }
+
+    .pub h3 {
+      margin-bottom: 5px;
+      font-size: 1.05rem;
+    }
+
+    .pub-meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+    }
+
+    .year {
+      font-weight: 900;
+      color: var(--pitt-blue);
+      font-size: 1.1rem;
+    }
+
+    .people-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .person {
+      display: grid;
+      grid-template-columns: 78px minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 78px;
+      height: 78px;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, var(--pitt-blue), #244F9E);
+      color: var(--pitt-gold);
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      font-weight: 900;
+    }
+
+    .contact {
+      background: var(--pitt-blue);
+      color: var(--pitt-white);
+      padding: 54px 0;
+    }
+
+    .contact .section-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .contact h2 {
+      margin-bottom: 8px;
+    }
+
+    .contact p {
+      color: #EEF3FF;
+      margin-bottom: 0;
+      max-width: 720px;
+    }
+
+    footer {
+      background: #101827;
+      color: #DCE4F5;
+      padding: 34px 0;
+      font-size: 0.92rem;
+    }
+
+    footer .section-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--pitt-gold);
+    }
+
+    @media (max-width: 880px) {
+      .hero .section-inner,
+      .split,
+      .grid-3,
+      .people-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .hero .section-inner {
+        padding-top: 42px;
+      }
+
+      .hero-visual {
+        min-height: 360px;
+      }
+
+      .section-head,
+      .contact .section-inner,
+      .nav-inner,
+      .topbar-inner {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .nav-inner {
+        padding: 16px 0;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topbar-inner,
+      .nav-inner,
+      .section-inner {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .brand {
+        min-width: 0;
+      }
+
+      .node {
+        width: 120px;
+        font-size: 0.78rem;
+      }
+
+      .n3 {
+        width: 132px;
+        left: 28%;
+      }
+
+      .pub {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <span>University of Pittsburgh Department of Biomedical Informatics</span>
+        <span><a href="#contact">Contact the lab</a></span>
+      </div>
+    </div>
+    <div class="nav-inner">
+      <a class="brand" href="#">
+        <span class="mark">T</span>
+        <span>
+          <strong>TrIADS Lab</strong>
+          <span>Translational Informatics Applied to Drug Safety</span>
+        </span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a class="active" href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#people">People</a>
+        <a href="#training">Training</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="section-inner">
+        <div>
+          <div class="eyebrow">Pitt DBMI Research Lab</div>
+          <h1 id="hero-title">Medication safety through clinical evidence, knowledge bases, and responsible AI.</h1>
+          <p class="hero-copy">The TrIADS Lab develops informatics methods for safer medication therapy, with emphasis on older adults, clinical decision support, pharmacovigilance, and natural product-drug interaction evidence.</p>
+          <div class="actions">
+            <a class="button primary" href="#research">Explore research</a>
+            <a class="button secondary" href="#publications">View publications</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Knowledge graph visual showing evidence connected to clinical decision support">
+          <span class="line l1"></span>
+          <span class="line l2"></span>
+          <span class="line l3"></span>
+          <span class="line l4"></span>
+          <div class="node gold n1">Evidence sources<small>Literature, labels, reports</small></div>
+          <div class="node blue n2">Knowledge bases<small>Ontologies and graphs</small></div>
+          <div class="node green n3">TrIADS methods<small>CDS, AI, pharmacovigilance</small></div>
+          <div class="node blue n4">Medication safety<small>Older adult care</small></div>
+          <div class="node gold n5">Actionable outputs<small>Tools and training</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="band grey">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>Research Themes</h2>
+            <p>Designed for fast scanning by collaborators, trainees, and funders while preserving the lab's informatics depth.</p>
+          </div>
+          <a href="#">All research areas</a>
+        </div>
+        <div class="grid-3">
+          <article class="card featured">
+            <h3>Clinical decision support that earns trust</h3>
+            <p>Designing and evaluating CDS interventions that fit clinical workflow and reduce medication-related risk.</p>
+            <div class="tags"><span class="tag">CDS</span><span class="tag">Implementation</span></div>
+          </article>
+          <article class="card">
+            <h3>Pharmacovigilance across evidence streams</h3>
+            <p>Signal detection and evidence management for drugs, natural products, labels, reports, and literature.</p>
+            <div class="tags"><span class="tag">Safety</span><span class="tag">Evidence</span></div>
+          </article>
+          <article class="card">
+            <h3>Knowledge bases plus generative models</h3>
+            <p>Combining structured biomedical knowledge with modern AI methods for safer, more explainable outputs.</p>
+            <div class="tags"><span class="tag">AI</span><span class="tag">Knowledge graphs</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="band">
+      <div class="section-inner split">
+        <div class="panel-blue">
+          <div class="eyebrow">Featured Project</div>
+          <h2>Natural product-drug interaction evidence graphs</h2>
+          <p>Mockup surface for projects that connect literature, drug labels, natural product evidence, and pharmacokinetic mechanisms into structured knowledge.</p>
+          <p><a href="#">Project details</a></p>
+        </div>
+        <div class="pipeline" aria-label="Evidence pipeline">
+          <div class="pipe-step">
+            <div class="num">1</div>
+            <div><h3>Collect evidence</h3><p>Scientific literature, structured sources, reports, and drug product labeling.</p></div>
+          </div>
+          <div class="pipe-step">
+            <div class="num">2</div>
+            <div><h3>Represent knowledge</h3><p>Ontologies, linked data, and knowledge graph methods for traceable reasoning.</p></div>
+          </div>
+          <div class="pipe-step">
+            <div class="num">3</div>
+            <div><h3>Support decisions</h3><p>Clinical decision support, signal review, and practical medication safety outputs.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications" class="band grey">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>Recent Work Mockup</h2>
+            <p>Use verified publication metadata in production. These rows show the intended information density and filtering shape.</p>
+          </div>
+          <a href="#">Filter publications</a>
+        </div>
+        <div class="publication-list">
+          <article class="pub">
+            <div>
+              <h3>Assessing multimodal AI for visual information extraction of pharmacology</h3>
+              <div class="pub-meta">Preprint signal found during research. Verify before production citation.</div>
+              <div class="tags"><span class="tag">Multimodal AI</span><span class="tag">Pharmacology</span></div>
+            </div>
+            <div class="year">2026</div>
+          </article>
+          <article class="pub">
+            <div>
+              <h3>Knowledge graph framework for pharmacokinetic natural product-drug interactions</h3>
+              <div class="pub-meta">Research theme based on public arXiv abstract and lab profile topics.</div>
+              <div class="tags"><span class="tag">NPDIs</span><span class="tag">Knowledge graph</span></div>
+            </div>
+            <div class="year">2022</div>
+          </article>
+          <article class="pub">
+            <div>
+              <h3>Medication safety, CDS, and pharmacovigilance methods</h3>
+              <div class="pub-meta">Collection row for the lab's core publication streams.</div>
+              <div class="tags"><span class="tag">CDS</span><span class="tag">Older adults</span><span class="tag">Safety</span></div>
+            </div>
+            <div class="year">Ongoing</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="people" class="band">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <h2>People and Collaborators</h2>
+            <p>Compact people cards keep the page useful for prospective students and external collaborators.</p>
+          </div>
+          <a href="#">Meet the team</a>
+        </div>
+        <div class="people-strip">
+          <article class="card person">
+            <div class="avatar">RB</div>
+            <div>
+              <h3>Richard D. Boyce, PhD</h3>
+              <p>Associate Professor, Biomedical Informatics; secondary appointments in Pharmacy and Intelligent Systems.</p>
+            </div>
+          </article>
+          <article id="training" class="card person">
+            <div class="avatar">AI</div>
+            <div>
+              <h3>AIBIDS Trainees</h3>
+              <p>Undergraduate research experience in AI and biomedical informatics, positioned as a clear training pathway.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="section-inner">
+        <div>
+          <h2>Work with TrIADS</h2>
+          <p>For collaborations, student opportunities, or project questions, route visitors to the lab contact and Pitt DBMI context.</p>
+        </div>
+        <a class="button primary" href="mailto:rdb20@pitt.edu">Email the lab</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="section-inner">
+      <span>TrIADS Lab, University of Pittsburgh Department of Biomedical Informatics</span>
+      <span><a href="#">DBMI</a> | <a href="#">Pitt</a> | <a href="#">GitHub</a></span>
+    </div>
+  </footer>
+</body>
+</html>
+
