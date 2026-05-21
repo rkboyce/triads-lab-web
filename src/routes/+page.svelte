@@ -1,4 +1,6 @@
 ﻿<script lang="ts">
+  let pageHeader: HTMLElement;
+
   const researchThemes = [
     {
       title: 'Clinical decision support that earns trust',
@@ -43,19 +45,33 @@
       tags: ['CDS', 'Older adults', 'Safety']
     }
   ];
+
+  function scrollToAnchor(event: MouseEvent, id: string) {
+    event.preventDefault();
+
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    const headerHeight = pageHeader?.getBoundingClientRect().height ?? 0;
+    const targetTop = target.getBoundingClientRect().top + window.scrollY;
+    const nextTop = Math.max(0, targetTop - headerHeight - 16);
+
+    history.pushState(null, '', `#${id}`);
+    window.scrollTo({ top: nextTop, behavior: 'smooth' });
+  }
 </script>
 
 <svelte:head>
   <title>TrIADS Lab | University of Pittsburgh DBMI</title>
 </svelte:head>
 
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main" on:click={(event) => scrollToAnchor(event, 'main')}>Skip to content</a>
 
-<header>
+<header bind:this={pageHeader}>
   <div class="topbar">
     <div class="wrap topbar-inner">
       <span>University of Pittsburgh Department of Biomedical Informatics</span>
-      <a href="#contact">Contact the lab</a>
+      <a href="#contact" on:click={(event) => scrollToAnchor(event, 'contact')}>Contact the lab</a>
     </div>
   </div>
   <div class="wrap nav-inner">
@@ -63,12 +79,12 @@
       <img class="brand-logo" src="/triads-lab-logo-transparent.png" alt="TrIADS Lab, Pitt DBMI" />
     </a>
     <nav aria-label="Primary navigation">
-      <a href="#research">Research</a>
-      <a href="#projects">Projects</a>
-      <a href="#publications">Publications</a>
-      <a href="#people">People</a>
-      <a href="#training">Training</a>
-      <a href="#contact">Contact</a>
+      <a href="#research" on:click={(event) => scrollToAnchor(event, 'research')}>Research</a>
+      <a href="#projects" on:click={(event) => scrollToAnchor(event, 'projects')}>Projects</a>
+      <a href="#publications" on:click={(event) => scrollToAnchor(event, 'publications')}>Publications</a>
+      <a href="#people" on:click={(event) => scrollToAnchor(event, 'people')}>People</a>
+      <a href="#training" on:click={(event) => scrollToAnchor(event, 'training')}>Training</a>
+      <a href="#contact" on:click={(event) => scrollToAnchor(event, 'contact')}>Contact</a>
     </nav>
   </div>
 </header>
@@ -81,8 +97,8 @@
         <h1 id="hero-title">Medication safety through clinical evidence, knowledge bases, and responsible AI.</h1>
         <p class="hero-copy">The TrIADS Lab develops informatics methods for safer medication therapy, with emphasis on older adults, clinical decision support, pharmacovigilance, and natural product-drug interaction evidence.</p>
         <div class="actions">
-          <a class="button primary" href="#research">Explore research</a>
-          <a class="button secondary" href="#publications">View publications</a>
+          <a class="button primary" href="#research" on:click={(event) => scrollToAnchor(event, 'research')}>Explore research</a>
+          <a class="button secondary" href="#publications" on:click={(event) => scrollToAnchor(event, 'publications')}>View publications</a>
         </div>
       </div>
       <div class="hero-visual" aria-label="Knowledge graph visual showing evidence connected to clinical decision support">
@@ -106,7 +122,7 @@
           <h2>Research Themes</h2>
           <p>Designed for fast scanning by collaborators, trainees, and funders while preserving the lab informatics depth.</p>
         </div>
-        <a href="#projects">Current projects</a>
+        <a href="#projects" on:click={(event) => scrollToAnchor(event, 'projects')}>Current projects</a>
       </div>
       <div class="grid-3">
         {#each researchThemes as theme, index}
@@ -128,7 +144,7 @@
         <p class="eyebrow">Featured Project</p>
         <h2>Natural product-drug interaction evidence graphs</h2>
         <p>Mockup surface for projects that connect literature, drug labels, natural product evidence, and pharmacokinetic mechanisms into structured knowledge.</p>
-        <a href="#contact">Discuss collaboration</a>
+        <a href="#contact" on:click={(event) => scrollToAnchor(event, 'contact')}>Discuss collaboration</a>
       </div>
       <div class="pipeline">
         {#each pipeline as step, index}
@@ -151,7 +167,7 @@
           <h2>Recent Work Mockup</h2>
           <p>Use verified publication metadata in production. These rows show the intended information density and filtering shape.</p>
         </div>
-        <a href="#contact">Submit citation updates</a>
+        <a href="#contact" on:click={(event) => scrollToAnchor(event, 'contact')}>Submit citation updates</a>
       </div>
       <div class="publication-list">
         {#each publications as publication}
