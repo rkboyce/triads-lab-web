@@ -54,7 +54,7 @@
 
     const headerHeight = pageHeader?.getBoundingClientRect().height ?? 0;
     const targetTop = target.getBoundingClientRect().top + window.scrollY;
-    const nextTop = Math.max(0, targetTop - headerHeight - 16);
+    const nextTop = Math.max(0, targetTop - headerHeight - 20);
 
     history.pushState(null, '', `#${id}`);
     window.scrollTo({ top: nextTop, behavior: 'smooth' });
@@ -76,7 +76,7 @@
   </div>
   <div class="wrap nav-inner">
     <a class="brand" href="/" aria-label="TrIADS Lab home">
-      <img class="brand-logo" src="/triads-lab-logo-transparent.png" alt="TrIADS Lab, Pitt DBMI" />
+      <img class="brand-logo" src="/triads-lab-logo-transparent-cropped.png" alt="TrIADS Lab, Pitt DBMI" />
     </a>
     <nav aria-label="Primary navigation">
       <a href="#research" on:click={(event) => scrollToAnchor(event, 'research')}>Research</a>
@@ -235,17 +235,17 @@
   .wrap { width: min(var(--max-width), calc(100% - 40px)); margin: 0 auto; }
   .skip { position: absolute; left: -999px; top: 12px; z-index: 50; background: var(--pitt-gold); color: var(--pitt-dark-grey); padding: 10px 14px; }
   .skip:focus { left: 12px; }
-  :global(html) { scroll-padding-top: 300px; }
-  main, section[id] { scroll-margin-top: 300px; scroll-margin-block-start: 300px; }
+  :global(html) { scroll-padding-top: 150px; }
+  main, section[id] { scroll-margin-top: 150px; scroll-margin-block-start: 150px; }
   header { position: sticky; top: 0; z-index: 20; background: var(--pitt-blue); border-bottom: 4px solid var(--pitt-gold); }
   .topbar { background: #0b285a; color: var(--pitt-white); font-size: 0.875rem; }
   .topbar-inner, .nav-inner, .contact-inner, .footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
   .topbar-inner { min-height: 34px; }
   .topbar a, footer a, .panel-blue a { color: var(--pitt-gold); font-weight: 800; }
-  .nav-inner { min-height: 76px; }
+  .nav-inner { min-height: 112px; padding: 12px 0; }
   .brand { display: flex; gap: 14px; align-items: center; color: var(--pitt-white); min-width: 280px; }
   .brand:hover { text-decoration: none; }
-  .brand-logo { display: block; width: clamp(210px, 30vw, 360px); height: auto; }
+  .brand-logo { display: block; width: clamp(230px, 27vw, 360px); max-height: 104px; height: auto; object-fit: contain; }
   nav { display: flex; justify-content: flex-end; gap: 4px; flex-wrap: wrap; }
   nav a { min-height: 44px; padding: 11px 12px; border-radius: 6px; color: var(--pitt-white); font-weight: 800; }
   nav a:hover { background: rgb(255 255 255 / 12%); color: var(--pitt-gold); text-decoration: none; }
@@ -297,6 +297,6 @@
   .contact { padding: 54px 0; background: var(--pitt-blue); color: var(--pitt-white); }
   .contact p { max-width: 720px; margin-bottom: 0; color: #eef3ff; }
   footer { padding: 34px 0; background: #101827; color: #dce4f5; font-size: 0.92rem; }
-  @media (max-width: 900px) { :global(html) { scroll-padding-top: 360px; } main, section[id] { scroll-margin-top: 360px; scroll-margin-block-start: 360px; } .hero-grid, .split, .grid-3, .people-grid { grid-template-columns: 1fr; } .topbar-inner, .nav-inner, .section-head, .contact-inner { align-items: start; flex-direction: column; } .nav-inner { padding: 16px 0; } nav { justify-content: flex-start; } }
+  @media (max-width: 900px) { :global(html) { scroll-padding-top: 220px; } main, section[id] { scroll-margin-top: 220px; scroll-margin-block-start: 220px; } .hero-grid, .split, .grid-3, .people-grid { grid-template-columns: 1fr; } .topbar-inner, .nav-inner, .section-head, .contact-inner { align-items: start; flex-direction: column; } .nav-inner { padding: 16px 0; } nav { justify-content: flex-start; } }
   @media (max-width: 560px) { .wrap { width: min(var(--max-width), calc(100% - 28px)); } .brand { min-width: 0; } .brand-logo { width: min(100%, 300px); } .node { width: 120px; font-size: 0.78rem; } .n3 { left: 28%; width: 132px; } .publication { grid-template-columns: 1fr; } }
 </style>
