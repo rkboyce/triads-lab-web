@@ -1,6 +1,4 @@
 ﻿<script lang="ts">
-  let pageHeader: HTMLElement;
-
   const researchThemes = [
     {
       title: 'Clinical decision support that earns trust',
@@ -46,45 +44,34 @@
     }
   ];
 
-  function scrollToAnchor(event: MouseEvent, id: string) {
-    event.preventDefault();
-
-    const target = document.getElementById(id);
-    if (!target) return;
-
-    const headerHeight = pageHeader?.getBoundingClientRect().height ?? 0;
-    const targetTop = target.getBoundingClientRect().top + window.scrollY;
-    const nextTop = Math.max(0, targetTop - headerHeight - 20);
-
-    history.pushState(null, '', `#${id}`);
-    window.scrollTo({ top: nextTop, behavior: 'smooth' });
-  }
 </script>
 
 <svelte:head>
   <title>TrIADS Lab | University of Pittsburgh DBMI</title>
 </svelte:head>
 
-<a class="skip" href="#main" on:click={(event) => scrollToAnchor(event, 'main')}>Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<header bind:this={pageHeader}>
+<header>
   <div class="topbar">
     <div class="wrap topbar-inner">
       <span>University of Pittsburgh Department of Biomedical Informatics</span>
-      <a href="#contact" on:click={(event) => scrollToAnchor(event, 'contact')}>Contact the lab</a>
+      <a href="#contact">Contact the lab</a>
     </div>
   </div>
   <div class="wrap nav-inner">
     <a class="brand" href="/" aria-label="TrIADS Lab home">
-      <img class="brand-logo" src="/triads-lab-logo-transparent-cropped.png" alt="TrIADS Lab, Pitt DBMI" />
+      <span class="brand-mark">TrIADS</span>
+      <span class="brand-lab">Lab</span>
+      <span class="brand-context">Pitt DBMI</span>
     </a>
     <nav aria-label="Primary navigation">
-      <a href="#research" on:click={(event) => scrollToAnchor(event, 'research')}>Research</a>
-      <a href="#projects" on:click={(event) => scrollToAnchor(event, 'projects')}>Projects</a>
-      <a href="#publications" on:click={(event) => scrollToAnchor(event, 'publications')}>Publications</a>
-      <a href="#people" on:click={(event) => scrollToAnchor(event, 'people')}>People</a>
-      <a href="#training" on:click={(event) => scrollToAnchor(event, 'training')}>Training</a>
-      <a href="#contact" on:click={(event) => scrollToAnchor(event, 'contact')}>Contact</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#people">People</a>
+      <a href="#training">Training</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -97,8 +84,8 @@
         <h1 id="hero-title">Medication safety through clinical evidence, knowledge bases, and responsible AI.</h1>
         <p class="hero-copy">The TrIADS Lab develops informatics methods for safer medication therapy, with emphasis on older adults, clinical decision support, pharmacovigilance, and natural product-drug interaction evidence.</p>
         <div class="actions">
-          <a class="button primary" href="#research" on:click={(event) => scrollToAnchor(event, 'research')}>Explore research</a>
-          <a class="button secondary" href="#publications" on:click={(event) => scrollToAnchor(event, 'publications')}>View publications</a>
+          <a class="button primary" href="#research">Explore research</a>
+          <a class="button secondary" href="#publications">View publications</a>
         </div>
       </div>
       <div class="hero-visual" aria-label="Knowledge graph visual showing evidence connected to clinical decision support">
@@ -122,7 +109,7 @@
           <h2>Research Themes</h2>
           <p>Designed for fast scanning by collaborators, trainees, and funders while preserving the lab informatics depth.</p>
         </div>
-        <a href="#projects" on:click={(event) => scrollToAnchor(event, 'projects')}>Current projects</a>
+        <a href="#projects">Current projects</a>
       </div>
       <div class="grid-3">
         {#each researchThemes as theme, index}
@@ -144,7 +131,7 @@
         <p class="eyebrow">Featured Project</p>
         <h2>Natural product-drug interaction evidence graphs</h2>
         <p>Mockup surface for projects that connect literature, drug labels, natural product evidence, and pharmacokinetic mechanisms into structured knowledge.</p>
-        <a href="#contact" on:click={(event) => scrollToAnchor(event, 'contact')}>Discuss collaboration</a>
+        <a href="#contact">Discuss collaboration</a>
       </div>
       <div class="pipeline">
         {#each pipeline as step, index}
@@ -167,7 +154,7 @@
           <h2>Recent Work Mockup</h2>
           <p>Use verified publication metadata in production. These rows show the intended information density and filtering shape.</p>
         </div>
-        <a href="#contact" on:click={(event) => scrollToAnchor(event, 'contact')}>Submit citation updates</a>
+        <a href="#contact">Submit citation updates</a>
       </div>
       <div class="publication-list">
         {#each publications as publication}
@@ -235,17 +222,17 @@
   .wrap { width: min(var(--max-width), calc(100% - 40px)); margin: 0 auto; }
   .skip { position: absolute; left: -999px; top: 12px; z-index: 50; background: var(--pitt-gold); color: var(--pitt-dark-grey); padding: 10px 14px; }
   .skip:focus { left: 12px; }
-  :global(html) { scroll-padding-top: 150px; }
-  main, section[id] { scroll-margin-top: 150px; scroll-margin-block-start: 150px; }
-  header { position: sticky; top: 0; z-index: 20; background: var(--pitt-blue); border-bottom: 4px solid var(--pitt-gold); }
+  header { background: var(--pitt-blue); border-bottom: 4px solid var(--pitt-gold); }
   .topbar { background: #0b285a; color: var(--pitt-white); font-size: 0.875rem; }
   .topbar-inner, .nav-inner, .contact-inner, .footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
   .topbar-inner { min-height: 34px; }
   .topbar a, footer a, .panel-blue a { color: var(--pitt-gold); font-weight: 800; }
-  .nav-inner { min-height: 112px; padding: 12px 0; }
-  .brand { display: flex; gap: 14px; align-items: center; color: var(--pitt-white); min-width: 280px; }
+  .nav-inner { min-height: 92px; padding: 12px 0; }
+  .brand { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; color: var(--pitt-white); min-width: 280px; }
   .brand:hover { text-decoration: none; }
-  .brand-logo { display: block; width: clamp(230px, 27vw, 360px); max-height: 104px; height: auto; object-fit: contain; }
+  .brand-mark { color: var(--pitt-gold); font-size: clamp(2.15rem, 4vw, 3.25rem); font-weight: 950; line-height: 1; }
+  .brand-lab { color: #6aa2e8; font-size: clamp(1.6rem, 3vw, 2.25rem); font-style: italic; font-weight: 800; line-height: 1; }
+  .brand-context { flex-basis: 100%; color: #dce8ff; font-size: 0.86rem; font-weight: 800; }
   nav { display: flex; justify-content: flex-end; gap: 4px; flex-wrap: wrap; }
   nav a { min-height: 44px; padding: 11px 12px; border-radius: 6px; color: var(--pitt-white); font-weight: 800; }
   nav a:hover { background: rgb(255 255 255 / 12%); color: var(--pitt-gold); text-decoration: none; }
@@ -297,6 +284,6 @@
   .contact { padding: 54px 0; background: var(--pitt-blue); color: var(--pitt-white); }
   .contact p { max-width: 720px; margin-bottom: 0; color: #eef3ff; }
   footer { padding: 34px 0; background: #101827; color: #dce4f5; font-size: 0.92rem; }
-  @media (max-width: 900px) { :global(html) { scroll-padding-top: 220px; } main, section[id] { scroll-margin-top: 220px; scroll-margin-block-start: 220px; } .hero-grid, .split, .grid-3, .people-grid { grid-template-columns: 1fr; } .topbar-inner, .nav-inner, .section-head, .contact-inner { align-items: start; flex-direction: column; } .nav-inner { padding: 16px 0; } nav { justify-content: flex-start; } }
-  @media (max-width: 560px) { .wrap { width: min(var(--max-width), calc(100% - 28px)); } .brand { min-width: 0; } .brand-logo { width: min(100%, 300px); } .node { width: 120px; font-size: 0.78rem; } .n3 { left: 28%; width: 132px; } .publication { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .hero-grid, .split, .grid-3, .people-grid { grid-template-columns: 1fr; } .topbar-inner, .nav-inner, .section-head, .contact-inner { align-items: start; flex-direction: column; } .nav-inner { padding: 16px 0; } nav { justify-content: flex-start; } }
+  @media (max-width: 560px) { .wrap { width: min(var(--max-width), calc(100% - 28px)); } .brand { min-width: 0; } .node { width: 120px; font-size: 0.78rem; } .n3 { left: 28%; width: 132px; } .publication { grid-template-columns: 1fr; } }
 </style>
