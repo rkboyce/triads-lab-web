@@ -61,7 +61,7 @@
   </div>
   <div class="wrap nav-inner">
     <a class="brand" href="/" aria-label="TrIADS Lab home">
-      <img class="brand-logo" src="/triads-lab-logo-cropped.png" alt="TrIADS Lab, Pitt DBMI" />
+      <img class="brand-logo" src="/triads-lab-logo-transparent-clean.png" alt="TrIADS Lab, Pitt DBMI" />
     </a>
     <nav aria-label="Primary navigation">
       <a href="#research">Research</a>
@@ -228,7 +228,7 @@
   .nav-inner { min-height: 112px; padding: 12px 0; }
   .brand { display: flex; align-items: center; color: var(--pitt-white); min-width: 280px; }
   .brand:hover { text-decoration: none; }
-  .brand-logo { display: block; width: clamp(260px, 30vw, 430px); max-height: 96px; height: auto; object-fit: contain; }
+  .brand-logo { display: block; width: clamp(320px, 34vw, 460px); height: auto; }
   nav { display: flex; justify-content: flex-end; gap: 4px; flex-wrap: wrap; }
   nav a { min-height: 44px; padding: 11px 12px; border-radius: 6px; color: var(--pitt-white); font-weight: 800; }
   nav a:hover { background: rgb(255 255 255 / 12%); color: var(--pitt-gold); text-decoration: none; }
