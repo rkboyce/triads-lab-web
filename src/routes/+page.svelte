@@ -255,7 +255,6 @@
   .line { position: absolute; height: 2px; background: rgb(255 184 28 / 78%); transform-origin: left center; }
   .l1 { width: 190px; left: 27%; top: 25%; transform: rotate(16deg); } .l2 { width: 164px; left: 54%; top: 35%; transform: rotate(132deg); } .l3 { width: 180px; left: 24%; top: 68%; transform: rotate(-24deg); } .l4 { width: 184px; right: 20%; top: 68%; transform: rotate(24deg); }
   .band { padding: 64px 0; }
-  .anchor-target { scroll-margin-top: 18px; }
   .band.grey { background: var(--surface); }
   .section-head { display: flex; justify-content: space-between; gap: 28px; align-items: end; margin-bottom: 26px; }
   .section-head p { max-width: 690px; margin-bottom: 0; color: var(--muted); }
