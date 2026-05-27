@@ -1,46 +1,84 @@
 ﻿<script lang="ts">
   const researchThemes = [
     {
-      title: 'Clinical decision support that earns trust',
-      summary: 'Designing and evaluating CDS interventions that fit clinical workflow and reduce medication-related risk.',
-      tags: ['CDS', 'Implementation']
+      title: 'Pharmacovigilance with traceable evidence',
+      summary: 'Building workflows that connect safety reports, labels, literature, clinical data, and knowledge graphs so medication safety reviews are faster and more defensible.',
+      tags: ['Safety', 'Evidence synthesis']
     },
     {
-      title: 'Pharmacovigilance across evidence streams',
-      summary: 'Signal detection and evidence management for drugs, natural products, labels, reports, and literature.',
-      tags: ['Safety', 'Evidence']
+      title: 'Clinical decision support standards',
+      summary: 'Translating drug-drug interaction evidence into computable CDS guidance that can fit real clinical workflows and health IT standards.',
+      tags: ['FHIR', 'CDS']
     },
     {
-      title: 'Knowledge bases plus generative models',
-      summary: 'Combining structured biomedical knowledge with modern AI methods for safer, more explainable outputs.',
-      tags: ['AI', 'Knowledge graphs']
+      title: 'AI-assisted study design and training',
+      summary: 'Developing responsible AI tools and mentored research pathways that help teams design biomedical informatics studies without losing methodological control.',
+      tags: ['AI', 'OHDSI']
     }
   ];
 
-  const pipeline = [
-    ['Collect evidence', 'Scientific literature, structured sources, reports, and drug product labeling.'],
-    ['Represent knowledge', 'Ontologies, linked data, and knowledge graph methods for traceable reasoning.'],
-    ['Support decisions', 'Clinical decision support, signal review, and practical medication safety outputs.']
+  const projects = [
+    {
+      title: 'PV Copilot',
+      type: 'AI-enabled pharmacovigilance workflow',
+      summary: 'A prototype web application for bringing patient records, spontaneous safety reports, drug labels, biomedical literature, signal detection outputs, and mechanistic knowledge graph evidence into one investigative workflow.',
+      tags: ['Pharmacovigilance', 'Knowledge graphs', 'LLMs'],
+      href: 'https://inventions.pitt.edu/technologies/pv-copilot-ai-powered--07530'
+    },
+    {
+      title: 'Study Agent',
+      type: 'OHDSI study design assistant',
+      summary: 'An open-source agent-style interface for human-led observational study design, including phenotype recommendation, cohort review, and reproducible OHDSI workflow support built around deterministic tools.',
+      tags: ['OHDSI', 'Study design', 'Open source'],
+      href: 'https://github.com/OHDSI/StudyAgent'
+    },
+    {
+      title: 'AI-infused post-market safety monitoring',
+      type: 'Safety monitoring for drugs and medicinal plants',
+      summary: 'A safety monitoring concept that combines AI, continuously updated knowledge graphs, spontaneous reporting evidence, literature, and user-facing summaries to detect and explain adverse event signals.',
+      tags: ['Post-market safety', 'Natural products', 'Signals'],
+      href: 'https://inventions.pitt.edu/technologies/ai-infused-post-market-safety--06710'
+    },
+    {
+      title: 'PDDI-CDS',
+      type: 'HL7 FHIR implementation guide',
+      summary: 'Standards-oriented work for representing potential drug-drug interaction clinical decision support with FHIR resources and workflow guidance for computable, interoperable CDS.',
+      tags: ['FHIR', 'Drug-drug interactions', 'Standards'],
+      href: 'https://build.fhir.org/ig/HL7/PDDI-CDS/'
+    },
+    {
+      title: 'AIBIDS',
+      type: 'Biomedical informatics research training',
+      summary: 'A 10-week mentored research internship in artificial intelligence, biomedical informatics, and data science with University of Pittsburgh and Gallaudet University mentors.',
+      tags: ['Training', 'Biomedical informatics', 'Data science'],
+      href: 'https://www.aibids.org/'
+    }
   ];
 
   const publications = [
     {
-      title: 'Assessing multimodal AI for visual information extraction of pharmacology',
-      meta: 'Preprint signal found during research. Verify before production citation.',
-      year: '2026',
-      tags: ['Multimodal AI', 'Pharmacology']
-    },
-    {
-      title: 'Knowledge graph framework for pharmacokinetic natural product-drug interactions',
-      meta: 'Research theme based on public arXiv abstract and lab profile topics.',
-      year: '2022',
-      tags: ['NPDIs', 'Knowledge graph']
+      title: 'Selected publications and profiles',
+      meta: 'Use ORCID and Google Scholar as profile and publication discovery links, then promote selected outputs with DOI, PubMed, PMC, or publisher URLs.',
+      year: 'Profile',
+      tags: ['ORCID', 'Google Scholar'],
+      links: [
+        ['ORCID', 'https://orcid.org/0000-0002-2993-2085'],
+        ['Google Scholar', 'https://scholar.google.com/citations?user=cmWWPNcAAAAJ&hl=en']
+      ]
     },
     {
       title: 'Medication safety, CDS, and pharmacovigilance methods',
-      meta: 'Collection row for the lab core publication streams.',
+      meta: 'Future production content should feature a short curated set of durable publication links rather than mirroring a full CV.',
       year: 'Ongoing',
-      tags: ['CDS', 'Older adults', 'Safety']
+      tags: ['CDS', 'Pharmacovigilance'],
+      links: []
+    },
+    {
+      title: 'Older and historical project outputs',
+      meta: 'Replace legacy microsites, SlideShare pages, QR-code destinations, and tracking URLs with DOI, PubMed, PMC, or publisher records after review.',
+      year: 'Review',
+      tags: ['Durable links', 'Curation'],
+      links: []
     }
   ];
 
@@ -78,7 +116,7 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">Design exploration 02 / Transparent logo</p>
+        <p class="eyebrow">Design exploration / Transparent logo</p>
         <h1 id="hero-title">Medication safety through clinical evidence, knowledge bases, and responsible AI.</h1>
         <p class="hero-copy">The TrIADS Lab develops informatics methods for safer medication therapy, with emphasis on older adults, clinical decision support, pharmacovigilance, and natural product-drug interaction evidence.</p>
         <div class="actions">
@@ -92,10 +130,10 @@
         <span class="line l3"></span>
         <span class="line l4"></span>
         <div class="node n1 gold">Evidence sources<small>Literature, labels, reports</small></div>
-        <div class="node n2 blue">Knowledge bases<small>Ontologies and graphs</small></div>
+        <div class="node n2 blue">Knowledge bases<small>FHIR, ontologies, graphs</small></div>
         <div class="node n3 green">TrIADS methods<small>CDS, AI, pharmacovigilance</small></div>
-        <div class="node n4 blue">Medication safety<small>Older adult care</small></div>
-        <div class="node n5 gold">Actionable outputs<small>Tools and training</small></div>
+        <div class="node n4 blue">Medication safety<small>Clinical and public health use</small></div>
+        <div class="node n5 gold">Actionable outputs<small>Tools, standards, training</small></div>
       </div>
     </div>
   </section>
@@ -105,7 +143,7 @@
       <div class="section-head">
         <div>
           <h2>Research Themes</h2>
-          <p>Designed for fast scanning by collaborators, trainees, and funders while preserving the lab informatics depth.</p>
+          <p>Current work is presented around research themes and selected outputs, not as a CV mirror.</p>
         </div>
         <a href="#projects">Current projects</a>
       </div>
@@ -124,21 +162,24 @@
   </section>
 
   <section class="band">
-    <div id="projects" class="wrap split anchor-target">
-      <div class="panel-blue">
-        <p class="eyebrow">Featured Project</p>
-        <h2>Natural product-drug interaction evidence graphs</h2>
-        <p>Mockup surface for projects that connect literature, drug labels, natural product evidence, and pharmacokinetic mechanisms into structured knowledge.</p>
-        <a href="#contact">Discuss collaboration</a>
+    <div id="projects" class="wrap anchor-target">
+      <div class="section-head">
+        <div>
+          <h2>Selected Project Highlights</h2>
+          <p>Public-facing project entries use stable Pitt, OHDSI, HL7, and AIBIDS references. DDICS/DDI-CDS and NaPDI links are intentionally held back for stale-link review.</p>
+        </div>
+        <a href="#publications">Publication profiles</a>
       </div>
-      <div class="pipeline">
-        {#each pipeline as step, index}
-          <article class="pipe-step">
-            <div class="num">{index + 1}</div>
-            <div>
-              <h3>{step[0]}</h3>
-              <p>{step[1]}</p>
+      <div class="project-grid">
+        {#each projects as project}
+          <article class="project-card">
+            <p class="project-type">{project.type}</p>
+            <h3>{project.title}</h3>
+            <p>{project.summary}</p>
+            <div class="tags">
+              {#each project.tags as tag}<span>{tag}</span>{/each}
             </div>
+            <a class="learn-more" href={project.href} target="_blank" rel="noreferrer">Learn more</a>
           </article>
         {/each}
       </div>
@@ -149,10 +190,10 @@
     <div id="publications" class="wrap anchor-target">
       <div class="section-head">
         <div>
-          <h2>Recent Work Mockup</h2>
-          <p>Use verified publication metadata in production. These rows show the intended information density and filtering shape.</p>
+          <h2>Publications and Profiles</h2>
+          <p>Profile links support publication discovery. Project pages stay focused on current themes and selected outputs.</p>
         </div>
-        <a href="#contact">Submit citation updates</a>
+        <a href="https://orcid.org/0000-0002-2993-2085" target="_blank" rel="noreferrer">ORCID profile</a>
       </div>
       <div class="publication-list">
         {#each publications as publication}
@@ -163,6 +204,13 @@
               <div class="tags">
                 {#each publication.tags as tag}<span>{tag}</span>{/each}
               </div>
+              {#if publication.links.length}
+                <div class="profile-links">
+                  {#each publication.links as link}
+                    <a href={link[1]} target="_blank" rel="noreferrer">{link[0]}</a>
+                  {/each}
+                </div>
+              {/if}
             </div>
             <strong>{publication.year}</strong>
           </article>
@@ -191,7 +239,8 @@
           <div class="avatar">AI</div>
           <div>
             <h3>AIBIDS Trainees</h3>
-            <p>Undergraduate research experience in AI and biomedical informatics, positioned as a clear training pathway.</p>
+            <p>Mentored research experience in AI, biomedical informatics, and data science, positioned as a clear training pathway.</p>
+            <a class="learn-more" href="https://www.aibids.org/" target="_blank" rel="noreferrer">Learn more</a>
           </div>
         </article>
       </div>
@@ -224,7 +273,7 @@
   .topbar { background: #0b285a; color: var(--pitt-white); font-size: 0.875rem; }
   .topbar-inner, .nav-inner, .contact-inner, .footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
   .topbar-inner { min-height: 34px; }
-  .topbar a, footer a, .panel-blue a { color: var(--pitt-gold); font-weight: 800; }
+  .topbar a, footer a { color: var(--pitt-gold); font-weight: 800; }
   .nav-inner { min-height: 112px; padding: 12px 0; }
   .brand { display: flex; align-items: center; color: var(--pitt-white); min-width: 280px; }
   .brand:hover { text-decoration: none; }
@@ -258,28 +307,29 @@
   .band.grey { background: var(--surface); }
   .section-head { display: flex; justify-content: space-between; gap: 28px; align-items: end; margin-bottom: 26px; }
   .section-head p { max-width: 690px; margin-bottom: 0; color: var(--muted); }
-  .grid-3, .people-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .grid-3, .people-grid, .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .card, .publication, .pipe-step { border: 1px solid var(--border); border-radius: var(--radius); background: var(--pitt-white); }
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .card, .publication, .project-card { border: 1px solid var(--border); border-radius: var(--radius); background: var(--pitt-white); }
   .card { padding: 22px; }
+  .project-card { display: flex; min-height: 330px; flex-direction: column; padding: 22px; }
+  .project-card p { color: var(--muted); }
+  .project-type { margin-bottom: 10px; color: var(--pitt-blue); font-size: 0.8rem; font-weight: 900; text-transform: uppercase; }
   .card.featured { border-top: 5px solid var(--pitt-gold); }
-  .card h3, .pipe-step h3, .publication h3 { margin-bottom: 8px; font-size: 1.12rem; line-height: 1.25; }
-  .card p, .pipe-step p, .publication p { color: var(--muted); }
+  .card h3, .publication h3, .project-card h3 { margin-bottom: 8px; font-size: 1.12rem; line-height: 1.25; }
+  .card p, .publication p { color: var(--muted); }
   .tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .tags span { border-radius: 999px; background: #eef3ff; color: var(--pitt-blue); padding: 5px 9px; font-size: 0.78rem; font-weight: 900; }
-  .split { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 28px; align-items: stretch; }
-  .panel-blue { padding: 28px; border-radius: var(--radius); background: var(--pitt-blue); color: var(--pitt-white); }
-  .panel-blue p { color: var(--pitt-white); }
-  .pipeline, .publication-list { display: grid; gap: 12px; }
-  .pipe-step { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 14px; align-items: start; padding: 16px; }
-  .num { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 50%; background: var(--pitt-gold); color: var(--pitt-dark-grey); font-weight: 900; }
+  .learn-more { display: inline-flex; margin-top: auto; padding-top: 18px; font-weight: 900; }
+  .publication-list { display: grid; gap: 12px; }
   .publication { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; padding: 18px; }
   .publication strong { color: var(--pitt-blue); font-size: 1.1rem; }
+  .profile-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px; font-weight: 900; }
   .person { display: grid; grid-template-columns: 78px minmax(0, 1fr); gap: 16px; align-items: center; }
   .avatar { display: grid; width: 78px; height: 78px; place-items: center; border-radius: var(--radius); background: linear-gradient(135deg, var(--pitt-blue), #244f9e); color: var(--pitt-gold); font-size: 1.4rem; font-weight: 900; }
   .contact { padding: 54px 0; background: var(--pitt-blue); color: var(--pitt-white); }
   .contact p { max-width: 720px; margin-bottom: 0; color: #eef3ff; }
   footer { padding: 34px 0; background: #101827; color: #dce4f5; font-size: 0.92rem; }
-  @media (max-width: 900px) { .hero-grid, .split, .grid-3, .people-grid { grid-template-columns: 1fr; } .topbar-inner, .nav-inner, .section-head, .contact-inner { align-items: start; flex-direction: column; } .nav-inner { padding: 16px 0; } nav { justify-content: flex-start; } }
+  @media (max-width: 900px) { .hero-grid, .grid-3, .people-grid, .project-grid { grid-template-columns: 1fr; } .topbar-inner, .nav-inner, .section-head, .contact-inner { align-items: start; flex-direction: column; } .nav-inner { padding: 16px 0; } nav { justify-content: flex-start; } }
   @media (max-width: 560px) { .wrap { width: min(var(--max-width), calc(100% - 28px)); } .brand { min-width: 0; } .brand-logo { width: min(100%, 320px); } .node { width: 120px; font-size: 0.78rem; } .n3 { left: 28%; width: 132px; } .publication { grid-template-columns: 1fr; } }
 </style>
