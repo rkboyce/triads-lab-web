@@ -55,6 +55,42 @@
     }
   ];
 
+  const methods = [
+    {
+      title: 'Evidence integration',
+      summary: 'Connecting drug labels, literature, spontaneous reports, clinical data, and structured knowledge so safety questions can be reviewed across sources.',
+      tags: ['Labels', 'Reports', 'Literature']
+    },
+    {
+      title: 'Knowledge representation',
+      summary: 'Using ontologies, FHIR resources, and knowledge graph patterns to keep medication-safety evidence traceable and computable.',
+      tags: ['FHIR', 'Ontologies', 'Graphs']
+    },
+    {
+      title: 'Human-centered AI workflows',
+      summary: 'Applying AI to triage, summarize, and structure evidence while keeping expert review, source grounding, and deterministic checks in the loop.',
+      tags: ['AI', 'Review', 'Provenance']
+    },
+    {
+      title: 'Emerging current work',
+      summary: 'A placeholder for active R01-adjacent research framing that can describe the problem space without exposing proposal aims or unpublished details.',
+      tags: ['Current work', 'Placeholder']
+    }
+  ];
+
+  const videos = [
+    {
+      title: 'PV Copilot overview',
+      caption: 'Placeholder for a 20- to 30-second project summary.',
+      href: 'https://inventions.pitt.edu/technologies/pv-copilot-ai-powered--07530'
+    },
+    {
+      title: 'Study Agent walkthrough',
+      caption: 'Placeholder for a brief human-led study-design workflow demo.',
+      href: 'https://github.com/OHDSI/StudyAgent'
+    }
+  ];
+
   const publications = [
     {
       title: 'Selected publications and profiles',
@@ -103,6 +139,7 @@
     </a>
     <nav aria-label="Primary navigation">
       <a href="#research">Research</a>
+      <a href="#methods">Methods</a>
       <a href="#projects">Projects</a>
       <a href="#publications">Publications</a>
       <a href="#people">People</a>
@@ -162,6 +199,29 @@
   </section>
 
   <section class="band">
+    <div id="methods" class="wrap anchor-target">
+      <div class="section-head">
+        <div>
+          <h2>Methods and Informatics Domains</h2>
+          <p>Methods are grouped by reusable capabilities so the site reads as a current lab program rather than a slide-deck sequence.</p>
+        </div>
+        <a href="#projects">See project examples</a>
+      </div>
+      <div class="method-grid">
+        {#each methods as method}
+          <article class="method-card">
+            <h3>{method.title}</h3>
+            <p>{method.summary}</p>
+            <div class="tags">
+              {#each method.tags as tag}<span>{tag}</span>{/each}
+            </div>
+          </article>
+        {/each}
+      </div>
+    </div>
+  </section>
+
+  <section class="band grey">
     <div id="projects" class="wrap anchor-target">
       <div class="section-head">
         <div>
@@ -180,6 +240,29 @@
               {#each project.tags as tag}<span>{tag}</span>{/each}
             </div>
             <a class="learn-more" href={project.href} target="_blank" rel="noreferrer">Learn more</a>
+          </article>
+        {/each}
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Short Video Placeholders</h2>
+          <p>Temporary surfaces for future Richard-recorded summaries. These are not final video content.</p>
+        </div>
+      </div>
+      <div class="video-grid">
+        {#each videos as video}
+          <article class="video-card">
+            <div class="play" aria-hidden="true"></div>
+            <div>
+              <h3>{video.title}</h3>
+              <p>{video.caption}</p>
+              <a class="learn-more" href={video.href} target="_blank" rel="noreferrer">Learn more</a>
+            </div>
           </article>
         {/each}
       </div>
@@ -248,12 +331,31 @@
   </section>
 
   <section class="contact">
-    <div id="contact" class="wrap contact-inner anchor-target">
+    <div id="contact" class="wrap contact-layout anchor-target">
       <div>
         <h2>Work with TrIADS</h2>
-        <p>For collaborations, student opportunities, or project questions, route visitors to the lab contact and Pitt DBMI context.</p>
+        <p>For collaborations, student opportunities, or project questions, the production site should route inquiries through a managed lab contact workflow rather than a personal email address.</p>
       </div>
-      <a class="button primary" href="mailto:rdb20@pitt.edu">Email the lab</a>
+      <form class="contact-form" aria-label="Contact workflow concept">
+        <label>
+          Inquiry type
+          <select>
+            <option>Collaboration</option>
+            <option>Student opportunity</option>
+            <option>Project question</option>
+            <option>Publication or citation update</option>
+          </select>
+        </label>
+        <label>
+          Your email
+          <input type="email" placeholder="name@example.edu" />
+        </label>
+        <label>
+          Brief message
+          <textarea rows="3" placeholder="A short note for the lab team"></textarea>
+        </label>
+        <button class="button primary" type="button">Contact workflow pending</button>
+      </form>
     </div>
   </section>
 </main>
@@ -271,7 +373,7 @@
   .skip:focus { left: 12px; }
   header { background: var(--pitt-blue); border-bottom: 4px solid var(--pitt-gold); }
   .topbar { background: #0b285a; color: var(--pitt-white); font-size: 0.875rem; }
-  .topbar-inner, .nav-inner, .contact-inner, .footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+  .topbar-inner, .nav-inner, .footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
   .topbar-inner { min-height: 34px; }
   .topbar a, footer a { color: var(--pitt-gold); font-weight: 800; }
   .nav-inner { min-height: 112px; padding: 12px 0; }
@@ -307,17 +409,19 @@
   .band.grey { background: var(--surface); }
   .section-head { display: flex; justify-content: space-between; gap: 28px; align-items: end; margin-bottom: 26px; }
   .section-head p { max-width: 690px; margin-bottom: 0; color: var(--muted); }
-  .grid-3, .people-grid, .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .grid-3, .people-grid, .project-grid, .method-grid, .video-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .card, .publication, .project-card { border: 1px solid var(--border); border-radius: var(--radius); background: var(--pitt-white); }
+  .project-grid, .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .method-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .card, .publication, .project-card, .method-card, .video-card, .contact-form { border: 1px solid var(--border); border-radius: var(--radius); background: var(--pitt-white); }
   .card { padding: 22px; }
+  .method-card { padding: 20px; }
   .project-card { display: flex; min-height: 330px; flex-direction: column; padding: 22px; }
   .project-card p { color: var(--muted); }
   .project-type { margin-bottom: 10px; color: var(--pitt-blue); font-size: 0.8rem; font-weight: 900; text-transform: uppercase; }
   .card.featured { border-top: 5px solid var(--pitt-gold); }
-  .card h3, .publication h3, .project-card h3 { margin-bottom: 8px; font-size: 1.12rem; line-height: 1.25; }
-  .card p, .publication p { color: var(--muted); }
+  .card h3, .publication h3, .project-card h3, .method-card h3, .video-card h3 { margin-bottom: 8px; font-size: 1.12rem; line-height: 1.25; }
+  .card p, .publication p, .method-card p, .video-card p { color: var(--muted); }
   .tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .tags span { border-radius: 999px; background: #eef3ff; color: var(--pitt-blue); padding: 5px 9px; font-size: 0.78rem; font-weight: 900; }
   .learn-more { display: inline-flex; margin-top: auto; padding-top: 18px; font-weight: 900; }
@@ -325,11 +429,20 @@
   .publication { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px; padding: 18px; }
   .publication strong { color: var(--pitt-blue); font-size: 1.1rem; }
   .profile-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px; font-weight: 900; }
+  .video-card { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 18px; padding: 20px; align-items: start; }
+  .play { position: relative; display: grid; width: 88px; aspect-ratio: 1 / 1; place-items: center; border-radius: var(--radius); background: var(--pitt-blue); }
+  .play::before { content: ''; width: 0; height: 0; margin-left: 6px; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 22px solid var(--pitt-gold); }
   .person { display: grid; grid-template-columns: 78px minmax(0, 1fr); gap: 16px; align-items: center; }
   .avatar { display: grid; width: 78px; height: 78px; place-items: center; border-radius: var(--radius); background: linear-gradient(135deg, var(--pitt-blue), #244f9e); color: var(--pitt-gold); font-size: 1.4rem; font-weight: 900; }
   .contact { padding: 54px 0; background: var(--pitt-blue); color: var(--pitt-white); }
   .contact p { max-width: 720px; margin-bottom: 0; color: #eef3ff; }
+  .contact-layout { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.7fr); gap: 28px; align-items: start; }
+  .contact-form { display: grid; gap: 12px; padding: 18px; color: var(--ink); }
+  .contact-form label { display: grid; gap: 6px; font-size: 0.85rem; font-weight: 900; }
+  .contact-form input, .contact-form select, .contact-form textarea { width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 10px 11px; color: var(--ink); font: inherit; }
+  .contact-form textarea { resize: vertical; }
   footer { padding: 34px 0; background: #101827; color: #dce4f5; font-size: 0.92rem; }
-  @media (max-width: 900px) { .hero-grid, .grid-3, .people-grid, .project-grid { grid-template-columns: 1fr; } .topbar-inner, .nav-inner, .section-head, .contact-inner { align-items: start; flex-direction: column; } .nav-inner { padding: 16px 0; } nav { justify-content: flex-start; } }
-  @media (max-width: 560px) { .wrap { width: min(var(--max-width), calc(100% - 28px)); } .brand { min-width: 0; } .brand-logo { width: min(100%, 320px); } .node { width: 120px; font-size: 0.78rem; } .n3 { left: 28%; width: 132px; } .publication { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .method-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 900px) { .hero-grid, .grid-3, .people-grid, .project-grid, .method-grid, .video-grid, .contact-layout { grid-template-columns: 1fr; } .topbar-inner, .nav-inner, .section-head { align-items: start; flex-direction: column; } .nav-inner { padding: 16px 0; } nav { justify-content: flex-start; } }
+  @media (max-width: 560px) { .wrap { width: min(var(--max-width), calc(100% - 28px)); } .brand { min-width: 0; } .brand-logo { width: min(100%, 320px); } .node { width: 120px; font-size: 0.78rem; } .n3 { left: 28%; width: 132px; } .publication, .video-card { grid-template-columns: 1fr; } }
 </style>
