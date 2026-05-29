@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import TagList from './TagList.svelte';
   import type { Project } from '$lib/data/projects';
 
@@ -10,7 +11,7 @@
   <h3>{project.title}</h3>
   <p>{project.summary}</p>
   <TagList tags={project.tags} />
-  <a class="learn-more" href={project.href} target="_blank" rel="noreferrer">Learn more</a>
+  <a class="learn-more" href="{base}/projects/{project.slug}">View project</a>
 </article>
 
 <style>
