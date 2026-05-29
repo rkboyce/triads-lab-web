@@ -20,8 +20,8 @@
     <nav aria-label="Primary navigation">
       <a href="{base}/research">Research</a>
       <a href="{home}#methods">Methods</a>
-      <a href="{home}#projects">Projects</a>
-      <a href="{home}#publications">Publications</a>
+      <a href="{base}/projects">Projects</a>
+      <a href="{base}/publications">Publications</a>
       <a href="{base}/people">People</a>
       <a href="{home}#training">Training</a>
       <a href="{home}#contact">Contact</a>
