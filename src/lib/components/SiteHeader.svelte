@@ -10,7 +10,7 @@
   <div class="topbar">
     <div class="wrap topbar-inner">
       <span>University of Pittsburgh Department of Biomedical Informatics</span>
-      <a href="{home}#contact">Contact the lab</a>
+      <a href="{base}/contact">Contact the lab</a>
     </div>
   </div>
   <div class="wrap nav-inner">
@@ -23,8 +23,8 @@
       <a href="{base}/projects">Projects</a>
       <a href="{base}/publications">Publications</a>
       <a href="{base}/people">People</a>
-      <a href="{home}#training">Training</a>
-      <a href="{home}#contact">Contact</a>
+      <a href="{base}/training">Training</a>
+      <a href="{base}/contact">Contact</a>
     </nav>
   </div>
 </header>
