@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   import ContactBand from '$lib/components/ContactBand.svelte';
   import ProjectCard from '$lib/components/ProjectCard.svelte';
   import PublicationList from '$lib/components/PublicationList.svelte';
@@ -6,7 +7,7 @@
   import TagList from '$lib/components/TagList.svelte';
   import { methods } from '$lib/data/methods';
   import { people } from '$lib/data/people';
-  import { projects } from '$lib/data/projects';
+  import { priorityProjects } from '$lib/data/projects';
   import { featuredPublications } from '$lib/data/publications';
   import { recentActivity } from '$lib/data/recent-activity';
   import { researchThemes } from '$lib/data/research-themes';
@@ -24,8 +25,8 @@
         <h1 id="hero-title">Medication safety through clinical evidence, knowledge bases, and responsible AI.</h1>
         <p class="hero-copy">The TrIADS Lab develops informatics methods for safer medication therapy, with emphasis on older adults, clinical decision support, pharmacovigilance, and natural product-drug interaction evidence.</p>
         <div class="actions">
-          <a class="button primary" href="#research">Explore research</a>
-          <a class="button secondary" href="#publications">View publications</a>
+          <a class="button primary" href="#projects">View projects</a>
+          <a class="button secondary" href="#research">Explore research</a>
         </div>
       </div>
       <div class="hero-visual" aria-label="Knowledge graph visual showing evidence connected to clinical decision support">
@@ -47,9 +48,9 @@
       <div class="section-head">
         <div>
           <h2>Research Themes</h2>
-          <p>Current work is presented around research themes and selected outputs, not as a CV mirror.</p>
+          <p>Research themes give visitors a fast map of the lab's active scientific scope.</p>
         </div>
-        <a href="#projects">Current projects</a>
+        <a href="{base}/research">Research page</a>
       </div>
       <div class="grid-3">
         {#each researchThemes as theme, index}
@@ -64,7 +65,7 @@
       <div class="section-head">
         <div>
           <h2>Methods and Informatics Domains</h2>
-          <p>Methods are grouped by reusable capabilities so the site reads as a current lab program rather than a slide-deck sequence.</p>
+          <p>Reusable methods connect project work across evidence sources, standards, AI workflows, and knowledge representation.</p>
         </div>
         <a href="#projects">See project examples</a>
       </div>
@@ -85,12 +86,12 @@
       <div class="section-head">
         <div>
           <h2>Selected Project Highlights</h2>
-          <p>Public-facing project entries use stable Pitt, OHDSI, HL7, and AIBIDS references. DDICS/DDI-CDS and NaPDI links are intentionally held back for stale-link review.</p>
+          <p>Priority project pages show how the lab translates evidence, AI, and standards work into public-facing tools and workflows.</p>
         </div>
-        <a href="#publications">Publication profiles</a>
+        <a href="{base}/projects">All projects</a>
       </div>
       <div class="project-grid">
-        {#each projects as project}
+        {#each priorityProjects as project}
           <ProjectCard {project} />
         {/each}
       </div>
@@ -102,7 +103,7 @@
       <div class="section-head">
         <div>
           <h2>Recent Public Activity</h2>
-          <p>Public professional activity reinforces the same themes shown in the prototype: patient safety, trustworthy AI evaluation, and human-led real-world evidence workflows.</p>
+          <p>Recent public activity keeps the homepage connected to current collaborations, trainee work, and AI evaluation themes.</p>
         </div>
       </div>
       <div class="activity-grid">
@@ -122,7 +123,7 @@
       <div class="section-head">
         <div>
           <h2>Planned Short Video Summaries</h2>
-          <p>Review surfaces for future 20- to 30-second Richard-recorded summaries near high-priority project content.</p>
+          <p>Short summaries can later give visitors a fast introduction to high-priority projects and workflows.</p>
         </div>
       </div>
       <div class="video-grid">
@@ -145,9 +146,9 @@
       <div class="section-head">
         <div>
           <h2>Publications and Profiles</h2>
-          <p>Profile links support publication discovery. Project pages stay focused on current themes and selected outputs.</p>
+          <p>A curated publication set backs the public project story with durable DOI, PubMed, and PMC records.</p>
         </div>
-        <a href="https://orcid.org/0000-0002-2993-2085" target="_blank" rel="noreferrer">ORCID profile</a>
+        <a href="{base}/publications">Publication page</a>
       </div>
       <PublicationList publications={featuredPublications} />
     </div>
@@ -158,8 +159,9 @@
       <div class="section-head">
         <div>
           <h2>People and Training</h2>
-          <p>Compact people and program cards keep the page useful for prospective students and external collaborators.</p>
+          <p>Leadership, mentoring areas, and training pathways are separated from project content for easier scanning.</p>
         </div>
+        <a href="{base}/people">People page</a>
       </div>
       <div class="people-grid">
         {#each people as person}
