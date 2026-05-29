@@ -20,4 +20,8 @@
   .project-type { margin: 0 0 10px; color: var(--pitt-blue); font-size: 0.8rem; font-weight: 900; text-transform: uppercase; }
   h3 { margin: 0 0 8px; font-size: 1.12rem; line-height: 1.25; }
   .learn-more { display: inline-flex; margin-top: auto; padding-top: 18px; font-weight: 900; }
+
+  @media (max-width: 760px) {
+    .project-card { min-height: 0; }
+  }
 </style>

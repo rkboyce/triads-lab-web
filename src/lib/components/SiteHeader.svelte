@@ -54,7 +54,10 @@
 
   @media (max-width: 560px) {
     .wrap { width: min(var(--max-width), calc(100% - 28px)); }
+    .topbar-inner { gap: 8px; }
     .brand { min-width: 0; }
     .brand-logo { width: min(100%, 320px); }
+    nav { display: grid; width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+    nav a { display: flex; align-items: center; min-height: 40px; padding: 9px 10px; }
   }
 </style>
