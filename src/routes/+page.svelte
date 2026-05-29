@@ -8,6 +8,7 @@
   import { people } from '$lib/data/people';
   import { projects } from '$lib/data/projects';
   import { featuredPublications } from '$lib/data/publications';
+  import { recentActivity } from '$lib/data/recent-activity';
   import { researchThemes } from '$lib/data/research-themes';
   import { videos } from '$lib/data/videos';
 </script>
@@ -100,6 +101,26 @@
     <div class="wrap">
       <div class="section-head">
         <div>
+          <h2>Recent Public Activity</h2>
+          <p>Public professional activity reinforces the same themes shown in the prototype: patient safety, trustworthy AI evaluation, and human-led real-world evidence workflows.</p>
+        </div>
+      </div>
+      <div class="activity-grid">
+        {#each recentActivity as item}
+          <article class="activity-card">
+            <h3>{item.title}</h3>
+            <p>{item.summary}</p>
+            <TagList tags={item.tags} />
+          </article>
+        {/each}
+      </div>
+    </div>
+  </section>
+
+  <section class="band grey">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
           <h2>Planned Short Video Summaries</h2>
           <p>Review surfaces for future 20- to 30-second Richard-recorded summaries near high-priority project content.</p>
         </div>
@@ -119,7 +140,7 @@
     </div>
   </section>
 
-  <section class="band grey">
+  <section class="band">
     <div id="publications" class="wrap anchor-target">
       <div class="section-head">
         <div>
@@ -132,7 +153,7 @@
     </div>
   </section>
 
-  <section class="band">
+  <section class="band grey">
     <div id="people" class="wrap anchor-target">
       <div class="section-head">
         <div>
@@ -191,13 +212,16 @@
   .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .project-grid, .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .method-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .card, .method-card, .video-card { border: 1px solid var(--border); border-radius: var(--radius); background: var(--pitt-white); }
+  .card, .method-card, .video-card, .activity-card { border: 1px solid var(--border); border-radius: var(--radius); background: var(--pitt-white); }
   .card { padding: 22px; }
   .method-card { padding: 20px; }
   .card h3, .method-card h3, .video-card h3 { margin-bottom: 8px; font-size: 1.12rem; line-height: 1.25; }
   .card p, .method-card p, .video-card p { color: var(--muted); }
   .learn-more { display: inline-flex; margin-top: auto; padding-top: 18px; font-weight: 900; }
   .video-card { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 18px; padding: 20px; align-items: start; }
+  .activity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .activity-card { padding: 20px; }
+  .activity-card p { color: var(--muted); }
   .play { position: relative; display: grid; width: 88px; aspect-ratio: 1 / 1; place-items: center; border-radius: var(--radius); background: var(--pitt-blue); }
   .play::before { content: ''; width: 0; height: 0; margin-left: 6px; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 22px solid var(--pitt-gold); }
   .person { display: grid; grid-template-columns: 78px minmax(0, 1fr); gap: 16px; align-items: center; }
@@ -208,7 +232,7 @@
   }
 
   @media (max-width: 900px) {
-    .hero-grid, .grid-3, .people-grid, .project-grid, .method-grid, .video-grid { grid-template-columns: 1fr; }
+    .hero-grid, .grid-3, .people-grid, .project-grid, .method-grid, .video-grid, .activity-grid { grid-template-columns: 1fr; }
     .section-head { align-items: start; flex-direction: column; }
   }
 
