@@ -7,7 +7,7 @@
   import { methods } from '$lib/data/methods';
   import { people } from '$lib/data/people';
   import { projects } from '$lib/data/projects';
-  import { publications } from '$lib/data/publications';
+  import { featuredPublications } from '$lib/data/publications';
   import { researchThemes } from '$lib/data/research-themes';
   import { videos } from '$lib/data/videos';
 </script>
@@ -128,7 +128,7 @@
         </div>
         <a href="https://orcid.org/0000-0002-2993-2085" target="_blank" rel="noreferrer">ORCID profile</a>
       </div>
-      <PublicationList {publications} />
+      <PublicationList publications={featuredPublications} />
     </div>
   </section>
 
