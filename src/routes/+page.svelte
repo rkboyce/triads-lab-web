@@ -19,7 +19,7 @@
 <section class="hero" aria-labelledby="hero-title">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">Design exploration / Transparent logo</p>
+        <p class="eyebrow">University of Pittsburgh DBMI</p>
         <h1 id="hero-title">Medication safety through clinical evidence, knowledge bases, and responsible AI.</h1>
         <p class="hero-copy">The TrIADS Lab develops informatics methods for safer medication therapy, with emphasis on older adults, clinical decision support, pharmacovigilance, and natural product-drug interaction evidence.</p>
         <div class="actions">
@@ -100,8 +100,8 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <h2>Short Video Placeholders</h2>
-          <p>Temporary surfaces for future Richard-recorded summaries. These are not final video content.</p>
+          <h2>Planned Short Video Summaries</h2>
+          <p>Review surfaces for future 20- to 30-second Richard-recorded summaries near high-priority project content.</p>
         </div>
       </div>
       <div class="video-grid">
