@@ -11,13 +11,13 @@ export const publications: Publication[] = [
     title:
       'Large-scale adverse effects related to treatment evidence standardization (LAERTES)',
     meta:
-      'Boyce RD et al. J Biomed Semantics. 2017;8(1):11. Open scalable system linking pharmacovigilance evidence sources with clinical data.',
+      'Knowledge Base workgroup of the OHDSI collaborative. J Biomed Semantics. 2017;8(1):11. Open, scalable system linking pharmacovigilance evidence sources with clinical data.',
     label: '2017',
     tags: ['Pharmacovigilance', 'OHDSI', 'Evidence integration'],
     links: [
       ['DOI', 'https://doi.org/10.1186/s13326-017-0115-3'],
-      ['PubMed', 'https://pubmed.ncbi.nlm.nih.gov/28270198/'],
-      ['PMC', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5341176/']
+      ['PMID', 'https://pubmed.ncbi.nlm.nih.gov/28270198/'],
+      ['PMCID', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5341176/']
     ]
   },
   {
@@ -28,8 +28,8 @@ export const publications: Publication[] = [
     tags: ['CDS', 'Drug-drug interactions', 'Algorithms'],
     links: [
       ['DOI', 'https://doi.org/10.1093/jamiaopen/ooab023'],
-      ['PubMed', 'https://pubmed.ncbi.nlm.nih.gov/33763631/'],
-      ['PMC', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7976224/']
+      ['PMID', 'https://pubmed.ncbi.nlm.nih.gov/33763631/'],
+      ['PMCID', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7976224/']
     ]
   },
   {
@@ -40,8 +40,8 @@ export const publications: Publication[] = [
     tags: ['Natural products', 'Knowledge graphs', 'Drug interactions'],
     links: [
       ['DOI', 'https://doi.org/10.1016/j.jbi.2023.104341'],
-      ['PubMed', 'https://pubmed.ncbi.nlm.nih.gov/36933632/'],
-      ['PMC', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10150409/']
+      ['PMID', 'https://pubmed.ncbi.nlm.nih.gov/36933632/'],
+      ['PMCID', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10150409/']
     ]
   },
   {
@@ -52,8 +52,8 @@ export const publications: Publication[] = [
     tags: ['Natural products', 'FAERS', 'Pharmacovigilance'],
     links: [
       ['DOI', 'https://doi.org/10.1111/cts.13505'],
-      ['PubMed', 'https://pubmed.ncbi.nlm.nih.gov/36861661/'],
-      ['PMC', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10264943/']
+      ['PMID', 'https://pubmed.ncbi.nlm.nih.gov/36861661/'],
+      ['PMCID', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10264943/']
     ]
   },
   {
@@ -64,8 +64,8 @@ export const publications: Publication[] = [
     tags: ['Knowledge graphs', 'Open science', 'Biomedical AI'],
     links: [
       ['DOI', 'https://doi.org/10.1038/s41597-024-03171-w'],
-      ['PubMed', 'https://pubmed.ncbi.nlm.nih.gov/38605048/'],
-      ['PMC', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11009265/']
+      ['PMID', 'https://pubmed.ncbi.nlm.nih.gov/38605048/'],
+      ['PMCID', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11009265/']
     ]
   },
   {
@@ -76,8 +76,8 @@ export const publications: Publication[] = [
     tags: ['Drug-drug interactions', 'Knowledge bases', 'CDS'],
     links: [
       ['DOI', 'https://doi.org/10.1016/j.jbi.2015.04.006'],
-      ['PubMed', 'https://pubmed.ncbi.nlm.nih.gov/25917055/'],
-      ['PMC', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4464899/']
+      ['PMID', 'https://pubmed.ncbi.nlm.nih.gov/25917055/'],
+      ['PMCID', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4464899/']
     ]
   },
   {
@@ -88,8 +88,8 @@ export const publications: Publication[] = [
     tags: ['CDS', 'Evidence evaluation', 'Drug safety'],
     links: [
       ['DOI', 'https://doi.org/10.1007/s40264-014-0262-8'],
-      ['PubMed', 'https://pubmed.ncbi.nlm.nih.gov/25556085/'],
-      ['PMC', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4624322/']
+      ['PMID', 'https://pubmed.ncbi.nlm.nih.gov/25556085/'],
+      ['PMCID', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4624322/']
     ]
   },
   {
@@ -100,8 +100,8 @@ export const publications: Publication[] = [
     tags: ['Drug labels', 'Knowledge representation', 'Medication safety'],
     links: [
       ['DOI', 'https://doi.org/10.1186/2041-1480-4-5'],
-      ['PubMed', 'https://pubmed.ncbi.nlm.nih.gov/23351881/'],
-      ['PMC', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3698101/']
+      ['PMID', 'https://pubmed.ncbi.nlm.nih.gov/23351881/'],
+      ['PMCID', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3698101/']
     ]
   },
   {
@@ -112,8 +112,8 @@ export const publications: Publication[] = [
     tags: ['Older adults', 'NLP', 'Adverse events'],
     links: [
       ['DOI', 'https://doi.org/10.4338/ACI-2017-02-RA-0036'],
-      ['PubMed', 'https://pubmed.ncbi.nlm.nih.gov/29241242/'],
-      ['PMC', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5802315/']
+      ['PMID', 'https://pubmed.ncbi.nlm.nih.gov/29241242/'],
+      ['PMCID', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5802315/']
     ]
   },
   {
@@ -123,8 +123,8 @@ export const publications: Publication[] = [
     label: '2025',
     tags: ['Natural products', 'Knowledge graph embeddings', 'AI'],
     links: [
-      ['PubMed', 'https://pubmed.ncbi.nlm.nih.gov/40502231/'],
-      ['PMC', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12150722/']
+      ['PMID', 'https://pubmed.ncbi.nlm.nih.gov/40502231/'],
+      ['PMCID', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12150722/']
     ]
   }
 ];

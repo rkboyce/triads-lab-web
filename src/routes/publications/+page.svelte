@@ -9,7 +9,7 @@
   <p class="eyebrow">Publications</p>
   <h1>Publication Profiles and Curated Outputs</h1>
   <p class="lead">
-    A concise publication hub helps visitors find authoritative profiles quickly, then scan selected outputs by research area without turning this page into a full CV mirror.
+    A concise publication hub helps visitors find authoritative profiles quickly, then scan selected durable records by research area without turning this page into a full CV mirror.
   </p>
 
   <div class="profile-grid">
@@ -24,14 +24,14 @@
   </div>
 
   <div class="curation-note">
-    <h2>Launch Curation Rule</h2>
-    <p>Promote durable records: DOI, PubMed, PMC, publisher pages, standards implementation guides, or maintained repositories. Older project pages and QR-code targets remain out of the launch list until reviewed.</p>
+    <h2>Launch Curation</h2>
+    <p>This launch set promotes durable records with DOI, PMID, PMCID, publisher, standards, or maintained repository targets. Older project pages and QR-code targets remain out of the launch list until reviewed.</p>
   </div>
 
   <div class="section-head">
     <div>
       <h2>Selected Publications</h2>
-      <p>These records are a first curated set drawn from the CV and organized around the current website themes.</p>
+      <p>These records replace the placeholder publication buckets with a focused set tied to pharmacovigilance, drug safety, clinical decision support, natural products, and biomedical knowledge graphs.</p>
     </div>
   </div>
 
