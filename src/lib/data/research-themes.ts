@@ -18,9 +18,15 @@ export const researchThemes: ResearchTheme[] = [
     tags: ['FHIR', 'CDS']
   },
   {
-    title: 'AI-assisted study design and training',
+    title: 'Medication safety for older adults',
     summary:
-      'Developing responsible AI tools and mentored research pathways that help teams design biomedical informatics studies without losing methodological control.',
-    tags: ['AI', 'OHDSI']
+      'Studying medication safety risks for older adults aging in place, including home health care handoffs, medication reconciliation, caregiver support, and informatics opportunities from the MEARS project.',
+    tags: ['Older adults', 'Home health', 'MEARS']
+  },
+  {
+    title: 'Human-AI tools for real-world evidence',
+    summary:
+      'Designing real-world evidence tools for Human-AI teams, with workflows that keep study design, phenotype review, and evidence generation grounded in expert oversight.',
+    tags: ['Human-AI teams', 'Real-world evidence', 'OHDSI']
   }
 ];

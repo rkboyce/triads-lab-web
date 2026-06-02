@@ -45,12 +45,16 @@
         <p>Methods for collecting, linking, reviewing, and explaining drug and natural-product safety evidence across heterogeneous sources.</p>
       </article>
       <article>
+        <h3>Older adult medication safety</h3>
+        <p>MEARS-related work on medication safety for older adults aging in place, including home health care transitions, reconciliation, handoffs, and caregiver support.</p>
+      </article>
+      <article>
         <h3>Computable CDS</h3>
         <p>Standards and workflows that make drug interaction evidence usable inside clinical decision support systems.</p>
       </article>
       <article>
-        <h3>Responsible biomedical AI</h3>
-        <p>AI-assisted workflows that preserve human review, deterministic checks, and traceable source evidence.</p>
+        <h3>Human-AI real-world evidence tools</h3>
+        <p>Workflows for Human-AI teams that support real-world evidence generation while preserving human review, deterministic checks, and traceable source evidence.</p>
       </article>
     </div>
   </section>
@@ -77,10 +81,11 @@
   h3 { margin: 0 0 8px; font-size: 1.08rem; }
   .lead { max-width: 820px; color: var(--muted); font-size: 1.15rem; }
   .theme-grid, .highlight-list { display: grid; gap: 16px; }
-  .theme-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .theme-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .theme-grid article, .highlight-list article { border: 1px solid var(--border); border-radius: var(--radius); background: var(--pitt-white); padding: 20px; }
   .theme-grid p, .highlight-list p { color: var(--muted); }
   .highlight-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .highlight-list a { font-weight: 900; }
+  @media (max-width: 1000px) { .theme-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 820px) { .theme-grid, .highlight-list { grid-template-columns: 1fr; } }
 </style>

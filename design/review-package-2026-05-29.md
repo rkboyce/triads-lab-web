@@ -61,10 +61,13 @@ This follows the call direction to avoid a CV mirror and avoid presenting the sl
 2. Clinical decision support standards
    - Computable drug interaction evidence and FHIR/CDS workflows.
 
-3. AI-assisted study design and training
-   - Responsible AI tools and mentored biomedical informatics pathways.
+3. Medication safety for older adults
+   - MEARS-related work on medication safety risks for older adults aging in place, including home health care transitions, reconciliation, handoffs, and caregiver support.
 
-Decision needed: confirm whether these three themes are the right public-facing reduction of the broader CV/deck research areas.
+4. Designing real world evidence tools for Human-AI teams
+   - Human-AI workflows for real-world evidence generation, study design, phenotype review, and traceable source evidence.
+
+Decision needed: confirm whether these four themes are the right public-facing reduction of the broader CV/deck research areas.
 
 ## Featured Projects
 
@@ -146,7 +149,7 @@ Decision needed: choose which 20- to 30-second videos Richard should eventually 
 
 - What PV Copilot is for
 - Why Study Agent matters
-- How the lab thinks about trustworthy AI in medication safety
+- Designing real world evidence tools for Human-AI teams
 
 ## Design Review Focus
 
@@ -160,7 +163,7 @@ Richard already indicated the overall colors, contrast, fonts, and sizing were a
 
 ## Open Questions For Richard
 
-1. Are the three public-facing research themes right?
+1. Are the four public-facing research themes right?
 2. Which projects should appear on the homepage?
 3. Which older project links should be replaced by publications?
 4. Which publications or outputs should be manually highlighted first?

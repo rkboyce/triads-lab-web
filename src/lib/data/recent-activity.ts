@@ -6,10 +6,10 @@ export type RecentActivity = {
 
 export const recentActivity: RecentActivity[] = [
   {
-    title: 'Regional patient safety initiative',
+    title: 'MEARS older adult medication safety work',
     summary:
-      'Recent public activity highlights Jewish Healthcare Foundation-supported patient safety work led by trainees and collaborators.',
-    tags: ['Patient safety', 'Collaboration', 'Trainees']
+      'Jewish Healthcare Foundation-supported work studies clinician and caregiver perspectives on medication safety for older adults receiving home health care.',
+    tags: ['MEARS', 'Older adults', 'Medication safety']
   },
   {
     title: 'Multimodal model reliability',
@@ -20,7 +20,7 @@ export const recentActivity: RecentActivity[] = [
   {
     title: 'Human-AI collaboration for real-world evidence',
     summary:
-      'Recent public activity also points to collaborative work on using Human-AI workflows to support real-world evidence generation.',
-    tags: ['Human-AI collaboration', 'Real-world evidence', 'AI workflows']
+      'Recent public activity also points to designing real-world evidence tools for Human-AI teams.',
+    tags: ['Human-AI teams', 'Real-world evidence', 'AI workflows']
   }
 ];
