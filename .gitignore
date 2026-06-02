@@ -8,3 +8,4 @@ boyce_lab_website/
 .env
 *.local
 *.zip
+docs/references/
