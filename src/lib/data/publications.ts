@@ -8,19 +8,6 @@ export type Publication = {
 
 export const publications: Publication[] = [
   {
-    title:
-      'Large-scale adverse effects related to treatment evidence standardization (LAERTES)',
-    meta:
-      'Knowledge Base workgroup of the OHDSI collaborative. J Biomed Semantics. 2017;8(1):11. Open, scalable system linking pharmacovigilance evidence sources with clinical data.',
-    label: '2017',
-    tags: ['Pharmacovigilance', 'OHDSI', 'Evidence integration'],
-    links: [
-      ['DOI', 'https://doi.org/10.1186/s13326-017-0115-3'],
-      ['PMID', 'https://pubmed.ncbi.nlm.nih.gov/28270198/'],
-      ['PMCID', 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5341176/']
-    ]
-  },
-  {
     title: 'Designing and evaluating contextualized drug-drug interaction algorithms',
     meta:
       'Chou E, Boyce RD et al. JAMIA Open. 2021;4(1):ooab023. Evaluation of tailored drug-drug interaction logic for clinical decision support.',
