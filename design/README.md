@@ -8,6 +8,7 @@ This directory contains first-pass design artifacts for a Svelte/SvelteKit imple
 - `design-system.md`: Visual tokens, accessibility notes, layout rules, and Svelte implementation guidance.
 - `content-model.md`: Proposed pages, sections, and reusable content types.
 - `research-brief.md`: Source-backed research notes used to shape the mockups.
+- `contact-workflow-power-automate.md`: Suggested contact form workflow using Power Automate and a shared Pitt mailbox.
 - `svelte-component-map.md`: Component breakdown for a SvelteKit build.
 
 ## Design Direction
