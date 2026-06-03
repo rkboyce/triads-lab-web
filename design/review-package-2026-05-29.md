@@ -117,13 +117,21 @@ Current prototype approach:
 - Add a curated publication area organized by research theme.
 - Replace placeholder rows with approved durable citation records.
 
-Open options:
+Launch workflow decision:
 
-- Manual curated list for launch.
-- Semi-manual update from Google Scholar/ORCID export.
-- Future agent-assisted bibliography workflow scoped to this website project.
+- Use a manual curated list for launch, maintained in `src/lib/data/publications.ts`.
+- Keep ORCID and Google Scholar as profile/discovery links.
+- Use DOI, PubMed, PubMed Central, publisher, standards, or maintained repository links as the durable authority for selected publication records.
+- Do not scrape Google Scholar or LinkedIn.
+- Use PubMed/PMC, ORCID public API, and Crossref REST API only as optional verification or future semi-manual review aids.
 
-Decision needed: choose the launch workflow. The pragmatic launch path is a manual curated list, with automation treated as a later enhancement.
+Recurring maintenance sketch:
+
+- Quarterly, review ORCID, Google Scholar profile, and PubMed search results for candidate additions.
+- Verify candidates through DOI, PMID, PMCID, publisher, standards, or maintained repository pages.
+- Add only a small set that supports current public-facing themes.
+- Run the site build and link checks after updates.
+- Defer any publication-review agent until after launch; if used, keep it scoped to candidate discovery and human-review summaries.
 
 ## Contact Workflow Options
 
