@@ -4,40 +4,25 @@
   <p class="eyebrow">Contact</p>
   <h1>Work With TrIADS</h1>
   <p class="lead">
-    The production site should route collaboration, trainee, and project inquiries through a managed workflow instead of a personal inbox. This page defines the first-pass form structure while hosting and delivery are selected.
+    For collaborations, trainee opportunities, or project questions, contact the lab directly by email while a managed intake workflow remains future scope.
   </p>
 
   <div class="contact-layout">
-    <form class="contact-form" aria-label="Contact workflow concept">
-      <label>
-        Inquiry type
-        <select>
-          <option>Collaboration</option>
-          <option>Student opportunity</option>
-          <option>Project question</option>
-          <option>Publication or citation update</option>
-        </select>
-      </label>
-      <label>
-        Your email
-        <input type="email" placeholder="name@example.edu" />
-      </label>
-      <label>
-        Brief message
-        <textarea rows="5" placeholder="A short note for the lab team"></textarea>
-      </label>
-      <button type="button">Delivery workflow pending</button>
-    </form>
+    <div class="contact-card">
+      <p class="card-label">Email</p>
+      <a href="mailto:rdb20@pitt.edu">rdb20@pitt.edu</a>
+      <p>Please include a short subject line that identifies the collaboration, student opportunity, project question, or publication update.</p>
+    </div>
 
     <aside class="workflow">
-      <h2>Launch Decision Needed</h2>
+      <h2>Future Scope</h2>
       <p>
-        Choose the destination before enabling submissions: a Pitt-supported form, a monitored shared mailbox, or a static-site form service compatible with the final host.
+        Mailer, OneDrive API, and Power Automate contact-message workflows are deferred until hosting and operations are settled.
       </p>
       <div class="status-list">
-        <span>Do not route to Richard's personal inbox</span>
-        <span>Keep inquiry type and sender email required</span>
-        <span>Confirm hosting support before launch</span>
+        <span>No contact form on the static site</span>
+        <span>No message handling code to maintain</span>
+        <span>Workflow integrations can be revisited later</span>
       </div>
     </aside>
   </div>
@@ -50,12 +35,11 @@
   h2 { margin: 0 0 12px; font-size: 1.3rem; }
   .lead { max-width: 820px; color: var(--muted); font-size: 1.15rem; }
   .contact-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr); gap: 20px; align-items: start; margin-top: 28px; }
-  .contact-form, .workflow { border: 1px solid var(--border); border-radius: var(--radius); background: var(--pitt-white); padding: 22px; }
-  .contact-form { display: grid; gap: 14px; }
-  label { display: grid; gap: 7px; font-size: 0.88rem; font-weight: 900; }
-  input, select, textarea { width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 11px 12px; color: var(--ink); font: inherit; }
-  textarea { resize: vertical; }
-  button { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: 7px; background: var(--pitt-gold); color: var(--pitt-dark-grey); padding: 12px 17px; font: inherit; font-weight: 900; }
+  .contact-card, .workflow { border: 1px solid var(--border); border-radius: var(--radius); background: var(--pitt-white); padding: 22px; }
+  .contact-card { display: grid; gap: 10px; border-top: 5px solid var(--pitt-blue); }
+  .contact-card a { color: var(--pitt-blue); font-size: 1.3rem; font-weight: 900; }
+  .contact-card p { color: var(--muted); }
+  .card-label { margin: 0; color: var(--pitt-blue); font-size: 0.78rem; font-weight: 900; text-transform: uppercase; }
   .workflow { border-top: 5px solid var(--pitt-gold); }
   .workflow p { color: var(--muted); }
   .status-list { display: grid; gap: 10px; margin-top: 18px; }

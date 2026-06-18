@@ -2,28 +2,13 @@
   <div id="contact" class="wrap contact-layout anchor-target">
     <div>
       <h2>Work with TrIADS</h2>
-      <p>For collaborations, student opportunities, or project questions, the production site should route inquiries through a managed lab contact workflow rather than a personal email address.</p>
+      <p>For collaborations, student opportunities, or project questions, contact the lab directly by email while managed intake workflows remain future scope.</p>
     </div>
-    <form class="contact-form" aria-label="Contact workflow concept">
-      <label>
-        Inquiry type
-        <select>
-          <option>Collaboration</option>
-          <option>Student opportunity</option>
-          <option>Project question</option>
-          <option>Publication or citation update</option>
-        </select>
-      </label>
-      <label>
-        Your email
-        <input type="email" placeholder="name@example.edu" />
-      </label>
-      <label>
-        Brief message
-        <textarea rows="3" placeholder="A short note for the lab team"></textarea>
-      </label>
-      <button class="button primary" type="button">Contact workflow pending</button>
-    </form>
+    <div class="contact-card">
+      <p class="card-label">Email</p>
+      <a href="mailto:rdb20@pitt.edu">rdb20@pitt.edu</a>
+      <p>Mailer, OneDrive API, and Power Automate contact-message workflows are deferred until hosting and operations are settled.</p>
+    </div>
   </div>
 </section>
 
@@ -32,12 +17,10 @@
   .contact { padding: 54px 0; background: var(--pitt-blue); color: var(--pitt-white); }
   .contact p { max-width: 720px; margin-bottom: 0; color: #eef3ff; }
   .contact-layout { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.7fr); gap: 28px; align-items: start; }
-  .contact-form { display: grid; gap: 12px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--pitt-white); padding: 18px; color: var(--ink); }
-  .contact-form label { display: grid; gap: 6px; font-size: 0.85rem; font-weight: 900; }
-  .contact-form input, .contact-form select, .contact-form textarea { width: 100%; border: 1px solid var(--border); border-radius: 6px; padding: 10px 11px; color: var(--ink); font: inherit; }
-  .contact-form textarea { resize: vertical; }
-  .button { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; padding: 12px 17px; border: 1px solid transparent; border-radius: 7px; font-weight: 900; }
-  .button.primary { background: var(--pitt-gold); color: var(--pitt-dark-grey); }
+  .contact-card { display: grid; gap: 8px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--pitt-white); padding: 20px; color: var(--ink); }
+  .contact-card p { color: var(--muted); }
+  .contact-card a { color: var(--pitt-blue); font-size: 1.25rem; font-weight: 900; }
+  .card-label { margin: 0; color: var(--pitt-blue); font-size: 0.78rem; font-weight: 900; text-transform: uppercase; }
 
   @media (max-width: 900px) {
     .contact-layout { grid-template-columns: 1fr; }
