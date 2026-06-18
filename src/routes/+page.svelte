@@ -204,7 +204,7 @@
   .node.blue { border-top: 5px solid var(--link-blue); }
   .node.green { border-top: 5px solid var(--success); }
   .n1 { left: 8%; top: 10%; } .n2 { right: 8%; top: 18%; } .n3 { left: 31%; top: 43%; width: 160px; } .n4 { left: 8%; bottom: 10%; } .n5 { right: 8%; bottom: 10%; }
-  .line { position: absolute; height: 2px; background: rgb(255 184 28 / 78%); transform-origin: left center; }
+  .line { display: none; }
   .l1 { width: 190px; left: 27%; top: 25%; transform: rotate(16deg); } .l2 { width: 164px; left: 54%; top: 35%; transform: rotate(132deg); } .l3 { width: 180px; left: 24%; top: 68%; transform: rotate(-24deg); } .l4 { width: 184px; right: 20%; top: 68%; transform: rotate(24deg); }
   .band { padding: 46px 0; }
   .hero + .band { padding-top: 32px; }
