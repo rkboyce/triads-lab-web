@@ -10,7 +10,7 @@
 <svelte:head><title>{project.title} - Boyce Lab</title></svelte:head>
 
 <section class="project-page">
-  <a class="back-link" href="{base}/projects">Back to projects</a>
+  <a class="back-link" href="{base}/#projects">Back to projects</a>
   <p class="eyebrow">{project.status}</p>
   <h1>{project.title}</h1>
   <p class="type">{project.type}</p>

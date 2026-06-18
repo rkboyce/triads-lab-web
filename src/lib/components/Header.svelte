@@ -6,7 +6,7 @@
     <h1>{title}</h1>
     <nav>
       <a href="/">Home</a>
-      <a href="/research">Research</a>
+      <a href="/#research">Research</a>
       <a href="/people">People</a>
       <a href="/about">About</a>
     </nav>

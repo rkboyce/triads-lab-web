@@ -2,16 +2,16 @@
   import { base } from '$app/paths';
   import ContactBand from '$lib/components/ContactBand.svelte';
   import ProjectCard from '$lib/components/ProjectCard.svelte';
-  import PublicationList from '$lib/components/PublicationList.svelte';
   import ResearchThemeCard from '$lib/components/ResearchThemeCard.svelte';
   import TagList from '$lib/components/TagList.svelte';
   import { methods } from '$lib/data/methods';
   import { people } from '$lib/data/people';
   import { priorityProjects } from '$lib/data/projects';
-  import { featuredPublications } from '$lib/data/publications';
   import { recentActivity } from '$lib/data/recent-activity';
   import { researchThemes } from '$lib/data/research-themes';
   import { videos } from '$lib/data/videos';
+
+  const scholarUrl = 'https://scholar.google.com/citations?user=cmWWPNcAAAAJ&hl=en';
 </script>
 
 <svelte:head>
@@ -50,7 +50,7 @@
           <h2>Research Themes</h2>
           <p>Research themes give visitors a fast map of the lab's active scientific scope.</p>
         </div>
-        <a href="{base}/research">Research page</a>
+        <a href="#methods">Methods</a>
       </div>
       <div class="grid-3">
         {#each researchThemes as theme, index}
@@ -88,7 +88,7 @@
           <h2>Selected Project Highlights</h2>
           <p>Priority project pages show how the lab translates evidence, AI, and standards work into public-facing tools and workflows.</p>
         </div>
-        <a href="{base}/projects">All projects</a>
+        <a href="#publications">Publications</a>
       </div>
       <div class="project-grid">
         {#each priorityProjects as project}
@@ -103,7 +103,7 @@
       <div class="section-head">
         <div>
           <h2>Recent Public Activity</h2>
-          <p>Recent public activity keeps the homepage connected to current collaborations, trainee work, and AI evaluation themes.</p>
+          <p>This area can become a Highlights section for timely lab updates, including items promoted through LinkedIn.</p>
         </div>
       </div>
       <div class="activity-grid">
@@ -146,11 +146,20 @@
       <div class="section-head">
         <div>
           <h2>Publications and Profiles</h2>
-          <p>A curated publication set backs the public project story with durable DOI, PubMed, and PMC records.</p>
+          <p>Use Google Scholar for the current publication record instead of maintaining a duplicate selected-publications list on the website.</p>
         </div>
-        <a href="{base}/publications">Publication page</a>
+        <a href={scholarUrl} target="_blank" rel="noreferrer">Open Google Scholar</a>
       </div>
-      <PublicationList publications={featuredPublications} />
+      <div class="profile-links">
+        <a class="profile-link" href={scholarUrl} target="_blank" rel="noreferrer">
+          <span>Google Scholar</span>
+          <strong>Current publication list and citation profile</strong>
+        </a>
+        <a class="profile-link" href="https://orcid.org/0000-0002-2993-2085" target="_blank" rel="noreferrer">
+          <span>ORCID</span>
+          <strong>Persistent author identifier</strong>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -226,6 +235,11 @@
   .activity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
   .activity-card { padding: 16px; }
   .activity-card p { color: var(--muted); }
+  .profile-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .profile-link { display: grid; gap: 8px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--pitt-blue); color: var(--pitt-white); padding: 20px; }
+  .profile-link:hover { color: var(--pitt-white); text-decoration: none; }
+  .profile-link span { color: var(--pitt-gold); font-size: 0.82rem; font-weight: 900; text-transform: uppercase; }
+  .profile-link strong { font-size: 1.08rem; line-height: 1.25; }
   .play { position: relative; display: grid; width: 88px; aspect-ratio: 1 / 1; place-items: center; border-radius: var(--radius); background: var(--pitt-blue); }
   .play::before { content: ''; width: 0; height: 0; margin-left: 6px; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 22px solid var(--pitt-gold); }
   .person { display: grid; grid-template-columns: 78px minmax(0, 1fr); gap: 16px; align-items: center; }
@@ -241,7 +255,7 @@
   }
 
   @media (max-width: 900px) {
-    .hero-grid, .grid-3, .people-grid, .project-grid, .method-grid, .video-grid, .activity-grid { grid-template-columns: 1fr; }
+    .hero-grid, .grid-3, .people-grid, .project-grid, .method-grid, .video-grid, .activity-grid, .profile-links { grid-template-columns: 1fr; }
     .hero-grid { min-height: auto; gap: 24px; padding: 34px 0 26px; }
     .hero-visual { min-height: 360px; }
     .section-head { align-items: start; flex-direction: column; }

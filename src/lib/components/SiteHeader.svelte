@@ -10,7 +10,7 @@
   <div class="topbar">
     <div class="wrap topbar-inner">
       <span>University of Pittsburgh Department of Biomedical Informatics</span>
-      <a href="{base}/contact">Contact the lab</a>
+      <a href="{home}#contact">Contact the lab</a>
     </div>
   </div>
   <div class="wrap nav-inner">
@@ -18,13 +18,13 @@
       <img class="brand-logo" src="{base}/triads-lab-logo-transparent-clean.png" alt="TrIADS Lab, Pitt DBMI" />
     </a>
     <nav aria-label="Primary navigation">
-      <a href="{base}/research">Research</a>
+      <a href="{home}#research">Research</a>
       <a href="{home}#methods">Methods</a>
-      <a href="{base}/projects">Projects</a>
-      <a href="{base}/publications">Publications</a>
+      <a href="{home}#projects">Projects</a>
+      <a href="https://scholar.google.com/citations?user=cmWWPNcAAAAJ&hl=en" target="_blank" rel="noreferrer">Publications</a>
       <a href="{base}/people">People</a>
-      <a href="{base}/training">Training</a>
-      <a href="{base}/contact">Contact</a>
+      <a href="{base}/people#training">Training</a>
+      <a href="{home}#contact">Contact</a>
     </nav>
   </div>
 </header>

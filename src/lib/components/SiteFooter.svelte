@@ -1,5 +1,8 @@
 <script lang="ts">
   import { base } from '$app/paths';
+
+  const home = `${base}/`;
+  const scholarUrl = 'https://scholar.google.com/citations?user=cmWWPNcAAAAJ&hl=en';
 </script>
 
 <footer>
@@ -9,12 +12,12 @@
       <span>University of Pittsburgh Department of Biomedical Informatics</span>
     </div>
     <nav aria-label="Footer navigation">
-      <a href="{base}/research">Research</a>
-      <a href="{base}/projects">Projects</a>
-      <a href="{base}/publications">Publications</a>
+      <a href="{home}#research">Research</a>
+      <a href="{home}#projects">Projects</a>
+      <a href={scholarUrl} target="_blank" rel="noreferrer">Publications</a>
       <a href="{base}/people">People</a>
-      <a href="{base}/training">Training</a>
-      <a href="{base}/contact">Contact</a>
+      <a href="{base}/people#training">Training</a>
+      <a href="{home}#contact">Contact</a>
       <a href="https://www.dbmi.pitt.edu/" target="_blank" rel="noreferrer">DBMI</a>
       <a href="https://www.pitt.edu/" target="_blank" rel="noreferrer">Pitt</a>
     </nav>
