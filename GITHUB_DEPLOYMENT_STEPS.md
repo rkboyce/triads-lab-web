@@ -1,5 +1,29 @@
 # GitHub Deployment: Next Steps
 
+## 2026-06-18 deployment status
+
+- The deployment workflow now runs from `dev`.
+- The workflow builds with `BASE_PATH=/triads-lab-web` so SvelteKit asset URLs match the project Pages path.
+- The workflow has `contents: write` permission so `peaceiris/actions-gh-pages` can publish the compiled static files.
+- The latest workflow run for commit `293d4f1` completed successfully and created/updated the `gh-pages` branch.
+- The `gh-pages` branch contains the current TrIADS site, including the transparent logo, Google Scholar publications link, and direct contact email.
+- The public URL `https://rkboyce.github.io/triads-lab-web/` still served the older placeholder page when checked immediately after deployment. That means the repository Pages setting likely still points at another source, or the Pages edge cache had not refreshed.
+
+Manual GitHub setting still needed:
+
+1. Open `https://github.com/rkboyce/triads-lab-web/settings/pages`.
+2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+3. Set branch to `gh-pages` and folder to `/ (root)`.
+4. Save.
+5. Recheck `https://rkboyce.github.io/triads-lab-web/` after GitHub Pages finishes publishing.
+
+Hosting notes:
+
+- GitHub Pages supports project sites at `https://<owner>.github.io/<repositoryname>`, so this repo's expected project URL is `https://rkboyce.github.io/triads-lab-web/`.
+- GitHub Pages is available for public repositories on GitHub Free.
+- Relevant limits from GitHub Docs: published Pages sites may be no larger than 1 GB, Pages deployments time out after 10 minutes, and Pages has a soft bandwidth limit of 100 GB per month.
+- For the current static TrIADS site, GitHub Pages should be a no-cost hosting option unless traffic or institutional requirements push the project toward a managed Pitt-hosted site or a custom-domain/CDN setup.
+
 This document outlines recommended next steps to deploy this repo to GitHub Pages, and a quick audit of whether the provided GitHub Actions workflow is likely to succeed. I ran a local production build (`npm run build`) and it completed successfully and wrote static files to `build/`.
 
 ## Quick summary
