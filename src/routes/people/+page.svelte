@@ -27,7 +27,7 @@
       </div>
     </article>
 
-    <article class="profile-card training-card">
+    <article id="training" class="profile-card training-card">
       <div class="avatar">AI</div>
       <div>
         <p class="card-label">Training pathway</p>
@@ -37,7 +37,7 @@
         </p>
         <div class="links">
           <a href="https://www.aibids.org/" target="_blank" rel="noreferrer">AIBIDS program</a>
-          <a href="{base}/training">Training page</a>
+          <a href="#training">Training pathway</a>
         </div>
       </div>
     </article>
@@ -48,7 +48,7 @@
       <h2>Mentoring Areas</h2>
       <p>Prospective trainees should see where their work could connect to active lab themes.</p>
     </div>
-    <a href="{base}/contact">Contact workflow</a>
+    <a href="{base}/#contact">Contact the lab</a>
   </div>
 
   <div class="area-grid">
