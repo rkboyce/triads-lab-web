@@ -29,17 +29,6 @@
           <a class="button secondary" href="#research">Explore research</a>
         </div>
       </div>
-      <div class="hero-visual" aria-label="Knowledge graph visual showing evidence connected to clinical decision support">
-        <span class="line l1"></span>
-        <span class="line l2"></span>
-        <span class="line l3"></span>
-        <span class="line l4"></span>
-        <div class="node n1 gold">Evidence sources<small>Literature, labels, reports</small></div>
-        <div class="node n2 blue">Knowledge bases<small>FHIR, ontologies, graphs</small></div>
-        <div class="node n3 green">TrIADS methods<small>CDS, AI, pharmacovigilance</small></div>
-        <div class="node n4 blue">Medication safety<small>Clinical and public health use</small></div>
-        <div class="node n5 gold">Actionable outputs<small>Tools, standards, training</small></div>
-      </div>
     </div>
   </section>
 
@@ -194,7 +183,7 @@
 <style>
   .wrap { width: min(var(--max-width), calc(100% - 40px)); margin: 0 auto; }
   .hero { color: var(--ink); background: linear-gradient(180deg, #ffffff 0%, #f5f7fb 100%); }
-  .hero-grid { display: grid; min-height: 480px; grid-template-columns: minmax(0, 1.02fr) minmax(340px, 0.98fr); gap: 36px; align-items: center; padding: 40px 0 30px; }
+  .hero-grid { display: grid; min-height: 420px; align-items: center; padding: 40px 0 30px; }
   .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0; color: var(--pitt-gold); font-size: 0.9rem; font-weight: 900; text-transform: uppercase; }
   .eyebrow::before { content: ''; width: 34px; height: 3px; background: var(--pitt-gold); }
   h1, h2, h3, p { margin-top: 0; }
@@ -206,15 +195,6 @@
   .button.primary { background: var(--pitt-gold); color: var(--pitt-dark-grey); }
   .button.secondary { border-color: var(--pitt-blue); color: var(--pitt-blue); background: var(--pitt-white); }
   .button:hover { text-decoration: none; }
-  .hero-visual { position: relative; min-height: 420px; overflow: hidden; border: 1px solid #c8d5ea; border-radius: var(--radius); background: #eef3ff; }
-  .node { position: absolute; display: grid; width: 132px; min-height: 72px; align-content: center; padding: 12px; border-radius: var(--radius); background: var(--pitt-white); box-shadow: var(--shadow); color: var(--ink); font-size: 0.86rem; font-weight: 800; }
-  .node small { display: block; margin-top: 4px; color: var(--muted); font-weight: 700; }
-  .node.gold { border-top: 5px solid var(--pitt-gold); }
-  .node.blue { border-top: 5px solid var(--link-blue); }
-  .node.green { border-top: 5px solid var(--success); }
-  .n1 { left: 8%; top: 10%; } .n2 { right: 8%; top: 18%; } .n3 { left: 31%; top: 43%; width: 160px; } .n4 { left: 8%; bottom: 10%; } .n5 { right: 8%; bottom: 10%; }
-  .line { display: none; }
-  .l1 { width: 190px; left: 27%; top: 25%; transform: rotate(16deg); } .l2 { width: 164px; left: 54%; top: 35%; transform: rotate(132deg); } .l3 { width: 180px; left: 24%; top: 68%; transform: rotate(-24deg); } .l4 { width: 184px; right: 20%; top: 68%; transform: rotate(24deg); }
   .band { padding: 46px 0; }
   .hero + .band { padding-top: 32px; }
   .band.grey { background: var(--surface); }
@@ -257,7 +237,6 @@
   @media (max-width: 900px) {
     .hero-grid, .grid-3, .people-grid, .project-grid, .method-grid, .video-grid, .activity-grid, .profile-links { grid-template-columns: 1fr; }
     .hero-grid { min-height: auto; gap: 24px; padding: 34px 0 26px; }
-    .hero-visual { min-height: 360px; }
     .section-head { align-items: start; flex-direction: column; }
   }
 
@@ -269,10 +248,6 @@
     .button { width: 100%; }
     .band { padding: 34px 0; }
     .hero + .band { padding-top: 26px; }
-    .hero-visual { display: grid; gap: 10px; min-height: auto; padding: 14px; overflow: visible; }
-    .line { display: none; }
-    .node { position: static; width: auto; min-height: 0; font-size: 0.82rem; }
-    .n3 { width: auto; }
     .video-card { grid-template-columns: 1fr; }
     .person { grid-template-columns: 1fr; align-items: start; }
   }
