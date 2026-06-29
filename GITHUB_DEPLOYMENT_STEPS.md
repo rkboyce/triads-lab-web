@@ -41,6 +41,52 @@ Then verify:
 2. Open `https://rkboyce.github.io/triads-lab-web/`.
 3. Hard refresh if the previous version is still cached.
 
+## Local development and `.env`
+
+The local `.env` file exists to set `BASE_PATH` for SvelteKit while developing or previewing the site locally. `svelte.config.js` reads `process.env.BASE_PATH` and passes it to `kit.paths.base`, which controls the URL prefix for app routes and generated assets.
+
+Current local files:
+
+```bash
+.env
+.env.example
+```
+
+Both currently contain:
+
+```bash
+BASE_PATH=/boyce_lab_website
+```
+
+That value makes the local site run under `/boyce_lab_website/`, which matches the older local/recovered folder naming. The GitHub Pages deployment uses a different path, `/triads-lab-web`, because the deployed repository URL is `https://rkboyce.github.io/triads-lab-web/`.
+
+For local development in Git Bash or WSL, load `.env` before starting Vite:
+
+```bash
+MSYS_NO_PATHCONV=1 env $(cat .env) npm run dev -- --host 127.0.0.1
+```
+
+Then open the local URL printed by Vite, commonly:
+
+```text
+http://127.0.0.1:5173/boyce_lab_website/
+```
+
+For local development in PowerShell, set the variable in the current session:
+
+```bash
+$env:BASE_PATH = "/boyce_lab_website"
+npm run dev -- --host 127.0.0.1
+```
+
+Clear it afterward if you want future commands in the same terminal to run from the site root:
+
+```bash
+Remove-Item Env:BASE_PATH
+```
+
+Do not put secrets in `.env` for this project. The current `.env` is only a local path configuration file, and the GitHub Actions workflow sets its deployment path directly in `.github/workflows/pages.yml`.
+
 ## Local verification before pushing
 
 Run the same build locally before pushing a deployment commit:
